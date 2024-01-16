@@ -1,3 +1,12 @@
 {
-    "employers": []
+  "employers": [
+    {
+      "id": "123",
+      "user_type": "Admin",
+      "fullname": "Sunil",
+      "department": "IT Admin",
+      "email": "schouhan2019@gmail.com",
+      "password": "Sunil@123"
+    }
+  ]
 }
