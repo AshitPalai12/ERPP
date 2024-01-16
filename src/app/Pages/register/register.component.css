@@ -1,74 +1,24 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8f9fa; /* Light background color */
-  }
-  
-  .card {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 40px;
-    width: 100%;
-    /* position: absolute; */
-    max-width: 400px;
-    background-color: #c1dff8; /* White background color */
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .card h1 {
-    color: #343a40; /* Dark text color */
-  }
-  
-  .card h4 {
-    color: #495057; /* Text color for additional information */
-  }
-  
-  .card p {
-    color: #6c757d; /* Subdued text color */
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 25px;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ced4da; /* Light border color */
-    border-radius: 5px;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3;
-  }
-  
-  .text-danger {
-    color: #dc3545;
-    font-size: 14px;
-  }
-  input.ng-invalid.ng-touched {
-    border: red 1px solid;
-  }
-  
-  /* Optional: Add responsive styles */
-  @media (max-width: 768px) {
-    .card {
-      max-width: 100%;
-    }
-  }
-  
+.card{
+  margin-top: 40px;
+  border: none;
+  width: 500px;
+  /* height: auto; */
+  padding: 40px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(96, 154, 194);
+  background: linear-gradient(90deg, rgb(169, 182, 241) 0%, hsla(260, 29%, 14%, 1)100%);
+}
+
+.card h1,h6{
+  color: white;
+}
+
+label{
+  color: white;
+}
+input.ng-invalid.ng-touched{
+  border: red 1px solid;
+}

@@ -10,18 +10,17 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { NotfoundComponent } from './Pages/notfound/notfound.component';
 import { NavbarComponent } from './Pages/navbar/navbar.component';
-import { HttpClientModule} from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ManagerComponent } from './manager/manager.component';
+import { ContainerComponent } from './Pages/container/container.component';
+import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
+import { UserListComponent } from './Pages/container/user-list/user-list.component';
 import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
-
-import { ManagerComponent } from './manager/manager.component';
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ContainerComponent } from './Pages/container/container.component';
-import { UserListComponent } from './Pages/container/user-list/user-list.component';
-import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
 
 
 
@@ -35,9 +34,7 @@ import { UserDetailComponent } from './Pages/container/user-detail/user-detail.c
     RegisterComponent,
     NotfoundComponent,
     NavbarComponent,
-
     ManagerComponent,
-
     ContainerComponent,
     UserListComponent,
     UserDetailComponent,
@@ -46,13 +43,10 @@ import { UserDetailComponent } from './Pages/container/user-detail/user-detail.c
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
     BrowserAnimationsModule
-
   ],
   providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
