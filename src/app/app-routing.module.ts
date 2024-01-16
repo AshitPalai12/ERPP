@@ -9,6 +9,11 @@ const routes: Routes = [
   {path:'', component:HomeComponent, title:'Home'},
   {path:'home', component:HomeComponent, title:'Home'},
   {path:'contact', component:ContactComponent, title:'ContactUs'},
+  {path:'login', component:ContactComponent, title:'Login'},
+  {path:'register', component:ContactComponent, title:'Register'},
+  {path:'admin', component:ContactComponent, title:'Admin'},
+  {path:'user', component:ContactComponent, title:'User'},
+  {path:'manager', component:ContactComponent, title:'Manager'},
   {path:'**', component:NotfoundComponent, title:'Error'},
 ];
 
