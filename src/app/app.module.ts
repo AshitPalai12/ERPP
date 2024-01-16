@@ -13,6 +13,7 @@ import { NavbarComponent } from './Pages/navbar/navbar.component';
 import { ContainerComponent } from './Pages/container/container.component';
 import { UserListComponent } from './Pages/container/user-list/user-list.component';
 import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { UserDetailComponent } from './Pages/container/user-detail/user-detail.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
