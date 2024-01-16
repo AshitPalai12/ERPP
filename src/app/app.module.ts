@@ -31,7 +31,7 @@ import { UserDetailComponent } from './Pages/container/user-detail/user-detail.c
     NotfoundComponent,
     NavbarComponent,
 
-    ManagerComponent
+    ManagerComponent,
 
     ContainerComponent,
     UserListComponent,
