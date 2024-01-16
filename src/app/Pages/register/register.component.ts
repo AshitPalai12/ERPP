@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) { }
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
+      id: ['', Validators.required],
       user_type: ['', Validators.required],
       fullname: ['', Validators.required],
       department: ['', Validators.required],
@@ -24,7 +25,7 @@ export class RegisterComponent implements OnInit {
   }
 
   signUp() {
-    this.http.post<any>("", this.signupForm.value)
+    this.http.post<any>("http://localhost:3000/employers", this.signupForm.value)
       .subscribe(res => {
         alert("Signup Successfull");
         this.signupForm.reset();
