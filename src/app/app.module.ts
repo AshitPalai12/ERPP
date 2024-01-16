@@ -10,11 +10,15 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { NotfoundComponent } from './Pages/notfound/notfound.component';
 import { NavbarComponent } from './Pages/navbar/navbar.component';
-import { HttpClientModule} from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ManagerComponent } from './manager/manager.component';
+import { ContainerComponent } from './Pages/container/container.component';
+import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
+import { UserListComponent } from './Pages/container/user-list/user-list.component';
 import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,12 @@ import { UserService } from './services/user.service';
     LoginComponent,
     RegisterComponent,
     NotfoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    ManagerComponent,
+    ContainerComponent,
+    UserListComponent,
+    UserDetailComponent,
+
   ],
   imports: [
     BrowserModule,
