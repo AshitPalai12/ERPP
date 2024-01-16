@@ -16,6 +16,15 @@ import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
 
+import { ManagerComponent } from './manager/manager.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ContainerComponent } from './Pages/container/container.component';
+import { UserListComponent } from './Pages/container/user-list/user-list.component';
+import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,14 +34,25 @@ import { UserService } from './services/user.service';
     LoginComponent,
     RegisterComponent,
     NotfoundComponent,
-    NavbarComponent
+    NavbarComponent,
+
+    ManagerComponent,
+
+    ContainerComponent,
+    UserListComponent,
+    UserDetailComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
+
+    BrowserAnimationsModule
+
   ],
   providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
