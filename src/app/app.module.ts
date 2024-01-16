@@ -10,6 +10,11 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { NotfoundComponent } from './Pages/notfound/notfound.component';
 import { NavbarComponent } from './Pages/navbar/navbar.component';
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ApiService } from './services/api.service';
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +29,12 @@ import { NavbarComponent } from './Pages/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
