@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContainerComponent } from './Pages/container/container.component';
 import { UserListComponent } from './Pages/container/user-list/user-list.component';
 import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -51,7 +52,6 @@ import { UserDetailComponent } from './Pages/container/user-detail/user-detail.c
     ReactiveFormsModule,
 
     BrowserAnimationsModule
-
   ],
   providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
