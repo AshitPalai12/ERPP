@@ -17,8 +17,11 @@ import { UserListComponent } from './Pages/container/user-list/user-list.compone
 import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth.service';
 import { UserService } from './services/user.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
+
   ],
   providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
