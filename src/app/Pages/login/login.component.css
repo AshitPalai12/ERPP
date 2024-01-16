@@ -1,0 +1,50 @@
+.box {
+    margin-top: 50px; /* Adjust margin as needed */
+}
+
+.container {
+    background-color: #f8f9fa; /* Background color for the container */
+    padding: 10px; /* Add padding to the container */
+    border-radius: 10px; /* Rounded corners for the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+}
+
+h2 {
+    text-align: center;
+    color: #007bff; /* Heading color */
+}
+
+.form-group {
+    margin-bottom: 0px; /* Adjust margin between form groups */
+}
+
+label {
+    font-weight: bold; /* Bold font for labels */
+}
+
+.form-control {
+    border-radius: 5px; /* Rounded corners for form controls */
+}
+
+.text-danger {
+    color: #dc3545; /* Red color for error messages */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    color: #fff; /* Text color for the button */
+    border: none; /* Remove button border */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Background color on hover */
+}
+
+a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+a:hover {
+    color: #0056b3; /* Link color on hover */
+}
