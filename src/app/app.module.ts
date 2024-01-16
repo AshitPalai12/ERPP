@@ -12,9 +12,9 @@ import { NotfoundComponent } from './Pages/notfound/notfound.component';
 import { NavbarComponent } from './Pages/navbar/navbar.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ApiService } from './services/api.service';
-import { AuthService } from './services/auth.service';
-import { UserService } from './services/user.service';
+import { ApiService } from './Services/api.service';
+import { AuthService } from './Services/auth.service';
+import { UserService } from './Services/user.service';
 
 import { ManagerComponent } from './manager/manager.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,7 +48,7 @@ import { UserDetailComponent } from './Pages/container/user-detail/user-detail.c
 
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
     BrowserAnimationsModule
 
