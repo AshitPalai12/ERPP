@@ -10,6 +10,11 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { NotfoundComponent } from './Pages/notfound/notfound.component';
 import { NavbarComponent } from './Pages/navbar/navbar.component';
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ApiService } from './services/api.service';
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
 
 import { ManagerComponent } from './manager/manager.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,9 +45,15 @@ import { UserDetailComponent } from './Pages/container/user-detail/user-detail.c
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+
     BrowserAnimationsModule
+
   ],
-  providers: [],
+  providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
