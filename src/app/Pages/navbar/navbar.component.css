@@ -1,41 +1,14 @@
-
-
-/* 
-.navbar {
-    background-color: #f8f9fa; 
-    padding: 15px; 
+/* Add your custom styles here */
+.btn-primary {
+    background-color: #007bff; /* Primary button background color */
+    color: #fff; /* Text color for the button */
+    border: none; /* Remove button border */
+    padding: 10px 15px; /* Adjust padding as needed */
+    font-size: 16px; /* Font size for the button text */
+    cursor: pointer; /* Change cursor on hover */
 }
 
-.navbar-brand {
-    font-weight: bold;
+.btn-primary:hover {
+    background-color: #0056b3; /* Background color on hover */
 }
 
-.navbar-nav {
-    margin-right: 15px; 
-}
-
-.navbar-nav .nav-item {
-    margin-right: 10px; 
-}
-
-.nav-link {
-    color: #007bff; 
-}
-
-.nav-link:hover {
-    color: #0056b3; 
-}
-
-
-.dropdown-menu {
-    background-color: #f8f9fa; 
-}
-
-.dropdown-item {
-    color: #007bff; 
-}
-
-.dropdown-item:hover {
-    background-color: #007bff; 
-    color: #ffffff; 
-} */
