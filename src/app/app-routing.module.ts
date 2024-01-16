@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegisterComponent } from './Pages/register/register.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { NotfoundComponent } from './Pages/notfound/notfound.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path:'home', component:HomeComponent, title:'Home'},
   {path:'contact', component:ContactComponent, title:'ContactUs'},
   {path:'**', component:NotfoundComponent, title:'Error'},
+  {path: 'register', component:RegisterComponent}
 ];
 
 @NgModule({
