@@ -10,6 +10,8 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { NotfoundComponent } from './Pages/notfound/notfound.component';
 import { NavbarComponent } from './Pages/navbar/navbar.component';
+import { ManagerComponent } from './manager/manager.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { NavbarComponent } from './Pages/navbar/navbar.component';
     LoginComponent,
     RegisterComponent,
     NotfoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    ManagerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
