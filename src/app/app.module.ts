@@ -10,6 +10,20 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { NotfoundComponent } from './Pages/notfound/notfound.component';
 import { NavbarComponent } from './Pages/navbar/navbar.component';
+import { ManagerComponent } from './manager/manager.component';
+import { ContainerComponent } from './Pages/container/container.component';
+import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
+import { UserListComponent } from './Pages/container/user-list/user-list.component';
+import { ApiService } from './services/api.service';
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,13 +34,34 @@ import { NavbarComponent } from './Pages/navbar/navbar.component';
     LoginComponent,
     RegisterComponent,
     NotfoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    ManagerComponent,
+    ContainerComponent,
+    UserListComponent,
+    UserDetailComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: "toast-top-right",
+      preventDuplicates: true,
+      progressBar:true,
+      closeButton:true,
+      tapToDismiss:true,
+      progressAnimation:'increasing',
+      newestOnTop: true,
+      toastClass:'toastr',
+      }),
+      
   ],
-  providers: [],
+  providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
