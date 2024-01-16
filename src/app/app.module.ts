@@ -10,10 +10,20 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { NotfoundComponent } from './Pages/notfound/notfound.component';
 import { NavbarComponent } from './Pages/navbar/navbar.component';
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ApiService } from './Services/api.service';
+import { AuthService } from './Services/auth.service';
+import { UserService } from './Services/user.service';
+
+import { ManagerComponent } from './manager/manager.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { ContainerComponent } from './Pages/container/container.component';
 import { UserListComponent } from './Pages/container/user-list/user-list.component';
 import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -26,16 +36,24 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     NotfoundComponent,
     NavbarComponent,
+
+    ManagerComponent,
     ContainerComponent,
     UserListComponent,
     UserDetailComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
