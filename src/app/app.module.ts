@@ -10,9 +10,14 @@ import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { NotfoundComponent } from './Pages/notfound/notfound.component';
 import { NavbarComponent } from './Pages/navbar/navbar.component';
+
+import { ManagerComponent } from './manager/manager.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { ContainerComponent } from './Pages/container/container.component';
 import { UserListComponent } from './Pages/container/user-list/user-list.component';
 import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
+
 
 
 @NgModule({
@@ -25,13 +30,18 @@ import { UserDetailComponent } from './Pages/container/user-detail/user-detail.c
     RegisterComponent,
     NotfoundComponent,
     NavbarComponent,
+
+    ManagerComponent
+
     ContainerComponent,
     UserListComponent,
     UserDetailComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
