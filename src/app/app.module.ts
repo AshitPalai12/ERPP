@@ -47,8 +47,8 @@ import {MatInputModule} from '@angular/material/input'
     UserDetailComponent,
     
     AdminComponent,
-          ManagerListComponent,
-          ManagerDetailsComponent,
+    ManagerListComponent,
+    ManagerDetailsComponent,
 
   ],
   imports: [
