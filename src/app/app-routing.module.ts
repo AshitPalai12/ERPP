@@ -7,6 +7,7 @@ import { NotfoundComponent } from './Pages/notfound/notfound.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { UserListComponent } from './Pages/container/user-list/user-list.component';
 import { ManagerComponent } from './manager/manager.component';
+import { ManagerListComponent } from './manager-list/manager-list.component';
 
 const routes: Routes = [
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'user', component:UserListComponent, title:'User'},
   {path:'manager', component:ManagerComponent, title:'Manager'},
   {path:'admin', component:UserListComponent, title:'Admin'},
+  {path:'manager-list', component:ManagerListComponent, title:'Manager-List'},
   {path:'**', component:NotfoundComponent, title:'Error'},
  
 ];
