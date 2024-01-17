@@ -33,7 +33,29 @@
       "password": "Sunil@123"
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "name": "Apple",
+      "id": "Iphone123",
+      "email": "apple@gmail.com",
+      "password": "apple@023",
+      "department": "developer"
+    },
+    {
+      "name": "sunil Chouhan",
+      "id": "SunilRR",
+      "email": "RRR2023@gmail.com",
+      "password": "RRR2023",
+      "department": "Digital"
+    },
+    {
+      "id": "Mac123",
+      "name": "Macrosoft",
+      "email": "Mac123@gmail.com",
+      "password": "Mac123",
+      "department": "Analyst"
+    }
+  ],
   "managers": [
     {
       "id": "1234",
