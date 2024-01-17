@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { User } from '../../model/userInter';
 import { ToastrService } from 'ngx-toastr';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'user-list',
@@ -22,6 +23,9 @@ export class UserListComponent implements OnInit {
 
   constructor(private fb: FormBuilder,private _apiService:ApiService, private toastr:ToastrService) {
   }
+
+  dataSource:any;
+  displayedColumns: string[] = ['userid','name', 'department', 'email', 'actions'];
 
   ngOnInit() {
     this.userForm = this.fb.group({
@@ -44,6 +48,10 @@ export class UserListComponent implements OnInit {
 
   jobForm(){
     this.isCreating = !this.isCreating;
+    if(!this.isCreating){
+      this.userForm.reset();
+      
+    }
   }
 
   //form submit and Post the user 
@@ -61,7 +69,8 @@ export class UserListComponent implements OnInit {
     else{
       
       this._apiService.updateUser(this.currentId, this.userForm.value).subscribe((res)=>{
-        
+        this.toastr.success("User has been successfully updated")
+
         this.isEditMode=false;
         this.isCreating=false;
         this.fetchUser();
@@ -80,6 +89,7 @@ export class UserListComponent implements OnInit {
     this._apiService.getUser().subscribe((res)=>{
       console.log(res);
       this.users=res;
+      this.dataSource=new MatTableDataSource(this.users)
       this.toastr.success("User has been successfully fetched")
     })
   }
@@ -108,9 +118,23 @@ export class UserListComponent implements OnInit {
 
   //delete the user
   deleteUser(id){
-    this._apiService.deleteUser(id).subscribe(()=>{
-      this.fetchUser();
-    })
+
+    const userResponse = window.confirm("Do you want delete this user??")
+    if(userResponse){
+
+      this._apiService.deleteUser(id).subscribe(()=>{
+        this.fetchUser();
+        this.toastr.success("User has been successfully deleted")
+      })
+    }
+    else{
+      return
+    }
+
   }
 
+  applyFilter(event: any): void {
+    const filterValue = (event.target && event.target.value) ? event.target.value : '';
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

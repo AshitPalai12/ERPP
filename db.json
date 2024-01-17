@@ -15,31 +15,62 @@
       "department": "Management",
       "email": "ashit@gmail.com",
       "password": "Ashit@12"
+    },
+    {
+      "id": "101",
+      "user_type": "Admin",
+      "fullname": "Jonga",
+      "department": "IT Admin",
+      "email": "jonga@test.com",
+      "password": "Jonga@123"
+    },
+    {
+      "id": "121",
+      "user_type": "Manager",
+      "fullname": "Sunil",
+      "department": "Angular",
+      "email": "sunil@test.com",
+      "password": "Sunil@123"
     }
   ],
   "users": [
     {
-      "name": "Apple byte",
+      "name": "Apple",
       "id": "Iphone123",
-      "email": "Iphone123@gmail.com",
-      "password": "123456",
+      "email": "apple@gmail.com",
+      "password": "apple@023",
       "department": "developer"
     },
     {
-      "name": "Macrosoft",
+      "name": "sunil Chouhan",
+      "id": "SunilRR",
+      "email": "RRR2023@gmail.com",
+      "password": "RRR2023",
+      "department": "Digital"
+    },
+    {
       "id": "Mac123",
-      "email": "mail",
-      "password": "123456",
-      "department": "GTE"
-    },
-    {
-      "id": "explorer123",
-      "name": "Google",
-      "email": "Explorer123",
-      "password": "123456",
-      "department": "developer"
+      "name": "Macrosoft",
+      "email": "Mac123@gmail.com",
+      "password": "Mac123",
+      "department": "Analyst"
     }
   ],
-  "managers": [],
+  "managers": [
+    {
+      "id": "9696",
+      "name": "Jai",
+      "password": "Jai",
+      "email": "jai@gmail.com",
+      "department": "IT"
+    },
+    {
+      "id": "9898",
+      "name": "Sourabh Soni",
+      "password": "ss",
+      "email": "ss@gmail.com",
+      "department": "IT"
+    }
+  ],
   "admin": []
 }

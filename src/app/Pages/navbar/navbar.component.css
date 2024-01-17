@@ -11,4 +11,17 @@
 .btn-primary:hover {
     background-color: #0056b3; /* Background color on hover */
 }
+img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Automatically adjusts the height to maintain aspect ratio */
+    display: block; /* Removes any default inline spacing */
+    margin: 0 auto; /* Centers the image horizontally */
+  }
+  .d-flex {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    margin-left: 800px; /* Adjust margin as needed for spacing */
+  }
+  
+  
 
