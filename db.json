@@ -7,7 +7,6 @@
       "department": "Management",
       "email": "suni@testmail.com",
       "password": "Suni@1234"
-
     },
     {
       "id": "1234",
@@ -18,7 +17,29 @@
       "password": "Ashit@12"
     }
   ],
-  "users":[],
-  "managers":[],
-  "admin":[]
+  "users": [
+    {
+      "name": "Apple byte",
+      "id": "Iphone123",
+      "email": "Iphone123@gmail.com",
+      "password": "123456",
+      "department": "developer"
+    },
+    {
+      "name": "Macrosoft",
+      "id": "Mac123",
+      "email": "mail",
+      "password": "123456",
+      "department": "GTE"
+    },
+    {
+      "id": "explorer123",
+      "name": "Google",
+      "email": "Explorer123",
+      "password": "123456",
+      "department": "developer"
+    }
+  ],
+  "managers": [],
+  "admin": []
 }

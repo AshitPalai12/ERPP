@@ -52,17 +52,7 @@ import { AdminComponent } from './admin/admin.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot({
-      timeOut: 10000,
-      positionClass: "toast-top-right",
-      preventDuplicates: true,
-      progressBar:true,
-      closeButton:true,
-      tapToDismiss:true,
-      progressAnimation:'increasing',
-      newestOnTop: true,
-      toastClass:'toastr',
-      }),
+    ToastrModule.forRoot(),
     ],
   providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
