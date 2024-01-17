@@ -21,10 +21,6 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "json-server": "^1.0.0-alpha.21",
-<<<<<<< HEAD
-    "ngx": "^2.4.0",
-=======
->>>>>>> d7399eacc35e601104b8d7435650ec442781a793
     "ngx-toastr": "^18.0.0",
     "rxjs": "~7.8.0",
     "toastr": "^2.1.4",
