@@ -7,7 +7,6 @@
       "department": "Management",
       "email": "suni@testmail.com",
       "password": "Suni@1234"
-
     },
     {
       "id": "1234",
@@ -16,6 +15,40 @@
       "department": "Management",
       "email": "ashit@gmail.com",
       "password": "Ashit@12"
+    },
+    {
+      "id": "101",
+      "user_type": "Admin",
+      "fullname": "Jonga",
+      "department": "IT Admin",
+      "email": "jonga@test.com",
+      "password": "Jonga@123"
+    },
+    {
+      "id": "121",
+      "user_type": "Manager",
+      "fullname": "Sunil",
+      "department": "Angular",
+      "email": "sunil@test.com",
+      "password": "Sunil@123"
     }
-  ]
+  ],
+  "users": [],
+  "managers": [
+    {
+      "id": "9696",
+      "name": "Jai",
+      "password": "Jai",
+      "email": "jai@gmail.com",
+      "department": "IT"
+    },
+    {
+      "id": "9898",
+      "name": "Sourabh Soni",
+      "password": "ss",
+      "email": "ss@gmail.com",
+      "department": "IT"
+    }
+  ],
+  "admin": []
 }
