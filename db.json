@@ -27,5 +27,21 @@
   ],
   "users": [],
   "managers": [],
+  "managers": [
+    {
+      "id": "9696",
+      "name": "Jai",
+      "password": "Jai",
+      "email": "jai@gmail.com",
+      "department": "IT"
+    },
+    {
+      "id": "9898",
+      "name": "Sourabh Soni",
+      "password": "ss",
+      "email": "ss@gmail.com",
+      "department": "IT"
+    }
+  ],
   "admin": []
 }
