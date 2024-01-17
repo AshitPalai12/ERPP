@@ -15,9 +15,18 @@
       "department": "Management",
       "email": "ashit@gmail.com",
       "password": "Ashit@12"
+    },
+    {
+      "id": "101",
+      "user_type": "Admin",
+      "fullname": "Jonga",
+      "department": "IT Admin",
+      "email": "jonga@test.com",
+      "password": "Jonga@123"
     }
   ],
   "users": [],
+  "managers": [],
   "managers": [
     {
       "id": "9696",
