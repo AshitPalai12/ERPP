@@ -48,8 +48,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-      
-  ],
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: "toast-top-right",
+      preventDuplicates: true,
+      progressBar:true,
+      closeButton:true,
+      tapToDismiss:true,
+      progressAnimation:'increasing',
+      newestOnTop: true,
+      toastClass:'toastr',
+      }),
+    ],
   providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
 })
