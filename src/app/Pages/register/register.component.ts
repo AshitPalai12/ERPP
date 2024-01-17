@@ -15,16 +15,17 @@ export class RegisterComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) { }
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
+      id: ['', Validators.required],
       user_type: ['', Validators.required],
       fullname: ['', Validators.required],
       department: ['', Validators.required],
       email: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6),Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]]
     })
   }
 
   signUp() {
-    this.http.post<any>("", this.signupForm.value)
+    this.http.post<any>("http://localhost:3000/employers", this.signupForm.value)
       .subscribe(res => {
         alert("Signup Successfull");
         this.signupForm.reset();

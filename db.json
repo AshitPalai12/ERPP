@@ -1,9 +1,12 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  } 
+  "employers": [
+    {
+      "id": "1234",
+      "user_type": "Manager",
+      "fullname": "Ashit Palai",
+      "department": "Management",
+      "email": "ashit@gmail.com",
+      "password": "Ashit@12"
+    }
+  ]
+}
