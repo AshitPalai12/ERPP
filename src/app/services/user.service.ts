@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  // create a user using the JSON server as backend 
+
+  //get the user from the JSON server
+
+  //update the user with the JSON server
+
+  //delete the user with the JSON server
+
 }

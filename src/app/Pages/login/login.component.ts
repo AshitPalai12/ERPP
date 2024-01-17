@@ -1,11 +1,58 @@
-import { Component } from '@angular/core';
+
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+// import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-// geuequeqqu
+export class LoginComponent implements OnInit {
+ constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router){
+  sessionStorage.clear();
+ }
+userData:any;
+filteredData:any;
+ngOnInit(){}
+
+loginForm= new FormGroup({
+  "youremailaddress":new FormControl('',[Validators.email, Validators.required]),
+  "yourpassword" : new FormControl('',[Validators.required,Validators.minLength(6),Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)])
+})
+
+login(){
+  // debugger
+  this.http.get<any>('http://localhost:3000/signupusers')
+  .subscribe(
+    (res)=>{
+      console.log('res', res);      
+    this.userData=res;
+    const emailAdded = this.loginForm.value.youremailaddress;
+    const emailPassword = this.loginForm.value.yourpassword;
+    this.filteredData = this.userData.find((each:any)=> each.email == emailAdded);
+    console.log('dataModify', this.filteredData);    
+    if(this.filteredData.password == emailPassword){
+      console.log('passcheck');      
+      if(this.filteredData.isactive){
+        console.log('active');        
+        sessionStorage.setItem('youremailaddress',this.filteredData.email),
+        sessionStorage.setItem('role',this.filteredData.role),
+        this.router.navigate(['job-list']);
+      }else{
+        // console.log('false');        
+          
+      }
+    }else{
+     
+    }
+  },(err:any)=>{
+    console.log(err,'err');
+    
+    alert(err);
+  })
 }
-// geougeeu
+
+}
