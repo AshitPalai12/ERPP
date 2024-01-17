@@ -59,8 +59,7 @@ import { ToastrModule } from 'ngx-toastr';
       newestOnTop: true,
       toastClass:'toastr',
       }),
-      
-  ],
+    ],
   providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
 })
