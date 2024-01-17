@@ -6,33 +6,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
-export class UserListComponent implements OnInit{
+export class UserListComponent implements OnInit {
 
+  userForm!: FormGroup
 
-  userForm!:FormGroup
-
-  constructor(private fb:FormBuilder){
-    
-
+  constructor(private fb: FormBuilder) {
   }
 
-  ngOnInit(){
-
+  ngOnInit() {
     this.userForm = this.fb.group({
-      username:[null,[Validators.required]],
-      password:[null,[Validators.required]],
-      role:[null,[Validators.required]],
-      department:[null,[Validators.required]]
+      username: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+      role: [null, [Validators.required]],
+      department: [null, [Validators.required]]
     })
 
   }
 
-  onFormSubmit(){
-
+  onFormSubmit() {
   }
-  
-  onEmptySubmit(){
-    if(this.userForm.invalid){
+
+  onEmptySubmit() {
+    if (this.userForm.invalid) {
       alert('Please enter the required fields!!')
     }
   }

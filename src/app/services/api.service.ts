@@ -8,16 +8,42 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  postEmployerByRole (data: any){
-    return this.http.post<any>('http://localhost:3000/employers', data)
+  postUser (data: any){
+    return this.http.post<any>('http://localhost:3000/users', data)
   }
-  getEmployerByRole(){
-    return this.http.get<any>('http://localhost:3000/employers')
+  getUser(){
+    return this.http.get<any>('http://localhost:3000/users')
   }
-  updateEmployerByRole(id: number, data: any){
-    return this.http.put<any>('http://localhost:3000/employers/'+id, data)
+  updateUser(id: number, data: any){
+    return this.http.put<any>('http://localhost:3000/users/'+id, data)
   }
-  deleteEmployerByRole(id: number){
-    return this.http.delete<any>('http://localhost:3000/employers/'+id)
+  deleteUser(id: number){
+    return this.http.delete<any>('http://localhost:3000/users/'+id)
+  }
+
+  postAdmin (data: any){
+    return this.http.post<any>('http://localhost:3000/admin', data)
+  }
+  getAdmin(){
+    return this.http.get<any>('http://localhost:3000/admin')
+  }
+  updateAdmin(id: number, data: any){
+    return this.http.put<any>('http://localhost:3000/admin/'+id, data)
+  }
+  deleteAdmin(id: number){
+    return this.http.delete<any>('http://localhost:3000/admin/'+id)
+  }
+
+  postManager (data: any){
+    return this.http.post<any>('http://localhost:3000/managers', data)
+  }
+  getManager(){
+    return this.http.get<any>('http://localhost:3000/managers')
+  }
+  updateManager(id: number, data: any){
+    return this.http.put<any>('http://localhost:3000/managers/'+id, data)
+  }
+  deleteManager(id: number){
+    return this.http.delete<any>('http://localhost:3000/managers/'+id)
   }
 }
