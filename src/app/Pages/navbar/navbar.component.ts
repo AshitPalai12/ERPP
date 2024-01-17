@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,5 +9,9 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   
-
+  constructor(private api: ApiService, private router: Router){}
+logout(){
+  this.api.logout();
+  this.router.navigate(["/login"])
+}
 }

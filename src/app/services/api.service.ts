@@ -46,4 +46,21 @@ export class ApiService {
   deleteManager(id: number){
     return this.http.delete<any>('http://localhost:3000/managers/'+id)
   }
+
+
+  // auth for login logout
+  
+  loggedIn : boolean =false;
+
+  login(){
+    this.loggedIn = true;
+  }
+
+  logout(){
+    this.loggedIn = false;
+  }
+
+  IsAuthenticated(){
+    return this.loggedIn;
+  }
 }

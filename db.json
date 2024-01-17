@@ -7,7 +7,6 @@
       "department": "Management",
       "email": "suni@testmail.com",
       "password": "Suni@1234"
-
     },
     {
       "id": "1234",
@@ -16,9 +15,17 @@
       "department": "Management",
       "email": "ashit@gmail.com",
       "password": "Ashit@12"
+    },
+    {
+      "id": "101",
+      "user_type": "Admin",
+      "fullname": "Jonga",
+      "department": "IT Admin",
+      "email": "jonga@test.com",
+      "password": "Jonga@123"
     }
   ],
-  "users":[],
-  "managers":[],
-  "admin":[]
+  "users": [],
+  "managers": [],
+  "admin": []
 }
