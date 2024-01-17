@@ -1,6 +1,15 @@
 {
   "employers": [
     {
+      "id": "122",
+      "user_type": "Manager",
+      "fullname": "Suni",
+      "department": "Management",
+      "email": "suni@testmail.com",
+      "password": "Suni@1234"
+
+    },
+    {
       "id": "1234",
       "user_type": "Manager",
       "fullname": "Ashit Palai",

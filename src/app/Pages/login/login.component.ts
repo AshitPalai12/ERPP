@@ -11,17 +11,18 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
- constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router){
-  sessionStorage.clear();
- }
-userData:any;
-filteredData:any;
-ngOnInit(){}
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router,
+    private toastr: ToastrModule, private toastr1: ToastrService) {
+    sessionStorage.clear();
+  }
+  userData: any;
+  filteredData: any;
+  ngOnInit() { }
 
-loginForm= new FormGroup({
-  "youremailaddress":new FormControl('',[Validators.email, Validators.required]),
-  "yourpassword" : new FormControl('',[Validators.required,Validators.minLength(6),Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)])
-})
+  loginForm = new FormGroup({
+    "youremailaddress": new FormControl('', [Validators.email, Validators.required]),
+    "yourpassword": new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)])
+  })
 
 login(){
   // debugger
@@ -43,10 +44,10 @@ login(){
         this.router.navigate(['job-list']);
       }else{
         // console.log('false');        
-         
+          this.toastr1.error('Please contact to admin', 'Inactive user!!')
       }
     }else{
-      
+      this.toastr1.error('Invalid Credentials','Error!!');
     }
   },(err:any)=>{
     console.log(err,'err');
