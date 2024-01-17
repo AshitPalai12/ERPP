@@ -17,5 +17,8 @@
       "email": "ashit@gmail.com",
       "password": "Ashit@12"
     }
-  ]
+  ],
+  "users":[],
+  "managers":[],
+  "admin":[]
 }
