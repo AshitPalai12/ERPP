@@ -51,7 +51,27 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://thumbs.dreamstime.com/z/enterprise-resource-planning-erp-corporate-company-management-business-internet-technology-concept-101526774.jpg'); /* Adjust the path accordingly */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
   
+
   /* Optional: Add responsive styles */
   @media (max-width: 768px) {
     .card-body {
