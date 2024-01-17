@@ -7,7 +7,6 @@
       "department": "Management",
       "email": "suni@testmail.com",
       "password": "Suni@1234"
-
     },
     {
       "id": "1234",
@@ -18,7 +17,22 @@
       "password": "Ashit@12"
     }
   ],
-  "users":[],
-  "managers":[],
-  "admin":[]
+  "users": [],
+  "managers": [
+    {
+      "id": "9696",
+      "name": "Jai",
+      "password": "Jai",
+      "email": "jai@gmail.com",
+      "department": "IT"
+    },
+    {
+      "id": "9898",
+      "name": "Sourabh Soni",
+      "password": "ss",
+      "email": "ss@gmail.com",
+      "department": "IT"
+    }
+  ],
+  "admin": []
 }
