@@ -58,18 +58,39 @@
   ],
   "managers": [
     {
-      "id": "9696",
-      "name": "Jai",
-      "password": "Jai",
-      "email": "jai@gmail.com",
-      "department": "IT"
+      "id": "1234",
+      "name": "John Doe",
+      "password": "john123",
+      "email": "john.doe@example.com",
+      "department": "HR"
     },
     {
-      "id": "9898",
-      "name": "Sourabh Soni",
-      "password": "ss",
-      "email": "ss@gmail.com",
-      "department": "IT"
+      "id": "5678",
+      "name": "Alice Johnson",
+      "password": "alice567",
+      "email": "alice.j@example.com",
+      "department": "Marketing"
+    },
+    {
+      "id": "8765",
+      "name": "Bob Smith",
+      "password": "bob789",
+      "email": "bob.smith@example.com",
+      "department": "Finance"
+    },
+    {
+      "id": "4567",
+      "name": "Mia Rodriguez",
+      "password": "mia456",
+      "email": "mia.r@example.com",
+      "department": "Sales"
+    },
+    {
+      "id": "3344",
+      "name": "Ryan Patel",
+      "password": "ryan123",
+      "email": "ryan.p@example.com",
+      "department": "Engineering"
     }
   ],
   "admin": []

@@ -25,9 +25,10 @@ import { ToastrModule} from 'ngx-toastr';
 import { AdminComponent } from './admin/admin.component';
 import { ManagerListComponent } from './manager-list/manager-list.component';
 import { ManagerDetailsComponent } from './manager-details/manager-details.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table'
+import {MatInputModule} from '@angular/material/input'
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -48,8 +49,8 @@ import { MatIconModule } from '@angular/material/icon';
     UserDetailComponent,
     
     AdminComponent,
-          ManagerListComponent,
-          ManagerDetailsComponent,
+    ManagerListComponent,
+    ManagerDetailsComponent,
 
   ],
   imports: [
@@ -62,7 +63,8 @@ import { MatIconModule } from '@angular/material/icon';
     ToastrModule.forRoot(),
     MatTableModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
     ],
   providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]
