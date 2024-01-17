@@ -1,6 +1,7 @@
 {
   "employers": [
     {
+<<<<<<< HEAD
       "id": "123",
       "user_type": "Admin",
       "fullname": "Sunil",
@@ -10,12 +11,27 @@
     },
     {
         "id": "1234",
+=======
+      "id": "122",
+      "user_type": "Manager",
+      "fullname": "Suni",
+      "department": "Management",
+      "email": "suni@testmail.com",
+      "password": "Suni@1234"
+
+    },
+    {
+      "id": "1234",
+>>>>>>> d7399eacc35e601104b8d7435650ec442781a793
       "user_type": "Manager",
       "fullname": "Ashit Palai",
       "department": "Management",
       "email": "ashit@gmail.com",
       "password": "Ashit@12"
+<<<<<<< HEAD
 
+=======
+>>>>>>> d7399eacc35e601104b8d7435650ec442781a793
     }
   ]
 }
