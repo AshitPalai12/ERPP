@@ -49,8 +49,8 @@ import {MatButtonModule} from '@angular/material/button';
     UserDetailComponent,
     
     AdminComponent,
-          ManagerListComponent,
-          ManagerDetailsComponent,
+    ManagerListComponent,
+    ManagerDetailsComponent,
 
   ],
   imports: [
