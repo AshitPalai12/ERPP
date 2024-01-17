@@ -3,11 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-<<<<<<< HEAD
 // import { ToastrModule, ToastrService } from 'ngx-toastr';
-=======
-import { ToastrModule, ToastrService } from 'ngx-toastr';
->>>>>>> d7399eacc35e601104b8d7435650ec442781a793
 
 @Component({
   selector: 'app-login',
@@ -15,7 +11,6 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-<<<<<<< HEAD
  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router){
   sessionStorage.clear();
  }
@@ -59,52 +54,5 @@ login(){
     alert(err);
   })
 }
-=======
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router,
-    private toastr: ToastrModule, private toastr1: ToastrService) {
-    sessionStorage.clear();
-  }
-  userData: any;
-  filteredData: any;
-  ngOnInit() { }
-
-  loginForm = new FormGroup({
-    "youremailaddress": new FormControl('', [Validators.email, Validators.required]),
-    "yourpassword": new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)])
-  })
-
-  login() {
-    // debugger
-    this.http.get<any>('http://localhost:3000/employers')
-      .subscribe(res => {
-        console.log('res', res);
-        this.userData = res;
-        const emailAdded = this.loginForm.value.youremailaddress;
-        const emailPassword = this.loginForm.value.yourpassword;
-        this.filteredData = this.userData.find((each: any) => each.email === emailAdded);
-        console.log('dataModify', this.filteredData);
-        if (this.filteredData.password === emailPassword) {
-          console.log('passcheck');
-          this.loginForm.reset();
-          this.router.navigate(['home']);
-          // if (this.filteredData.isactive) {
-          //   console.log('active');
-          //   sessionStorage.setItem('youremailaddress', this.filteredData.email),
-          //     sessionStorage.setItem('role', this.filteredData.role),
-          //     this.router.navigate(['job-list']);
-          // } else {
-          //   // console.log('false');        
-          //   this.toastr1.error('Please contact to admin', 'Inactive user!!')
-          // }
-        } else {
-          this.toastr1.error('Invalid Credentials', 'Error!!');
-        }
-      }, (err: any) => {
-        console.log(err, 'err');
-
-        alert(err);
-      })
-  }
->>>>>>> d7399eacc35e601104b8d7435650ec442781a793
 
 }
