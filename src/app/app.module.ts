@@ -22,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+import { AdminComponent } from './admin/admin.component';
+
 
 
 
@@ -39,6 +41,8 @@ import { ToastrModule } from 'ngx-toastr';
     ContainerComponent,
     UserListComponent,
     UserDetailComponent,
+    
+    AdminComponent,
 
   ],
   imports: [

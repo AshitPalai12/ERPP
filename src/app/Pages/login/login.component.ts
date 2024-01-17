@@ -25,7 +25,7 @@ loginForm= new FormGroup({
 
 login(){
   // debugger
-  this.http.get<any>('http://localhost:3000/signupusers')
+  this.http.get<any>('http://localhost:3000/employers')
   .subscribe(
     (res)=>{
       console.log('res', res);      
@@ -54,5 +54,7 @@ login(){
     alert(err);
   })
 }
+
+
 
 }
