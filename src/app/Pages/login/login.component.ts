@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
- constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private toastr:ToastrModule, private toastr1: ToastrService){
+ constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router){
   sessionStorage.clear();
  }
 userData:any;
@@ -43,10 +43,10 @@ login(){
         this.router.navigate(['job-list']);
       }else{
         // console.log('false');        
-          this.toastr1.error('Please contact to admin', 'Inactive user!!')
+         
       }
     }else{
-      this.toastr1.error('Invalid Credentials','Error!!');
+      
     }
   },(err:any)=>{
     console.log(err,'err');

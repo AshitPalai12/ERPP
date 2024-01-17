@@ -20,7 +20,7 @@ import { UserService } from './services/user.service';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+
 
 
 
@@ -48,17 +48,6 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot({
-      timeOut: 10000,
-      positionClass: "toast-top-right",
-      preventDuplicates: true,
-      progressBar:true,
-      closeButton:true,
-      tapToDismiss:true,
-      progressAnimation:'increasing',
-      newestOnTop: true,
-      toastClass:'toastr',
-      }),
       
   ],
   providers: [ApiService, AuthService, UserService],
