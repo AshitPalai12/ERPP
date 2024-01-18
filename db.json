@@ -93,5 +93,15 @@
       "department": "Engineering"
     }
   ],
-  "admin": []
+  "admin": [
+    {
+      "name": "Xnetn",
+      "description": "hdwj",
+      "deadline": "2024-01-29",
+      "department": "dept1",
+      "manager": "sunil h",
+      "teams": "jbaj h",
+      "id": "2294"
+    }
+  ]
 }

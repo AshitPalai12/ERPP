@@ -9,6 +9,7 @@ import { UserListComponent } from './Pages/container/user-list/user-list.compone
 import { ManagerComponent } from './manager/manager.component';
 import { ManagerListComponent } from './manager-list/manager-list.component';
 import { AboutComponent } from './Pages/about/about.component';
+import { CreateProjectComponent } from './project/create-project/create-project.component';
 
 const routes: Routes = [
 
@@ -18,10 +19,11 @@ const routes: Routes = [
   {path:'contact', component:ContactComponent, title:'ContactUs'},
   {path:'login', component:LoginComponent, title:'Login'},
   {path:'register', component:RegisterComponent, title:'Register'},
-  {path:'user', component:UserListComponent, title:'User'},
-  {path:'manager', component:ManagerComponent, title:'Manager'},
-  {path:'admin', component:UserListComponent, title:'Admin'},
+  {path:'user', component:UserListComponent, title:'User list'},
+  {path:'manager', component:ManagerListComponent, title:'Manager list'},
+  // {path:'admin', component:UserListComponent, title:'Admin'},
   {path:'manager-list', component:ManagerListComponent, title:'Manager-List'},
+  {path: 'CreateProject',component:CreateProjectComponent, title:'Create Project'},
   {path:'**', component:NotfoundComponent, title:'Error'},
  
 ];

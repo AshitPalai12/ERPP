@@ -29,6 +29,8 @@ import {MatTableModule} from '@angular/material/table'
 import {MatInputModule} from '@angular/material/input'
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { CreateProjectComponent } from './project/create-project/create-project.component';
+import { ProjectListComponent } from './project/project-list/project-list.component';
 
 
 
@@ -51,6 +53,8 @@ import {MatButtonModule} from '@angular/material/button';
     AdminComponent,
     ManagerListComponent,
     ManagerDetailsComponent,
+    CreateProjectComponent,
+    ProjectListComponent,
 
   ],
   imports: [
