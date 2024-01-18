@@ -30,6 +30,8 @@ import {MatInputModule} from '@angular/material/input'
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { ProfileComponent } from './profile/profile.component';
+import { FinanceComponent } from './Finance/finance/finance.component';
+import { FinanceService } from './Finance/finance-service.service';
 
 
 
@@ -53,6 +55,7 @@ import { ProfileComponent } from './profile/profile.component';
     ManagerListComponent,
     ManagerDetailsComponent,
     ProfileComponent,
+    FinanceComponent,
 
   ],
   imports: [
@@ -68,7 +71,7 @@ import { ProfileComponent } from './profile/profile.component';
     MatIconModule,
     MatButtonModule
     ],
-  providers: [ApiService, AuthService, UserService],
+  providers: [ApiService, AuthService, UserService, FinanceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
