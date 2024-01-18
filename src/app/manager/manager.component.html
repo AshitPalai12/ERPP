@@ -1,39 +1,31 @@
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h2 class="text-center mb-4">Manager Creation</h2>
-            <div class="container">
-                <form [formGroup]="managerForm" (ngSubmit)="loadManager()">
-                    <div class="form-group">
-                        <label for="username">Employee ID*</label>
-                        <input type="text" formControlName="id" id="id" class="form-control" required>
-                        <span class="text-danger" *ngIf="managerForm.controls['id'].dirty && managerForm.hasError('required','id')">*Manager Id is required</span>
+<h1 class="text-center">Manager Registration</h1>
 
-                        <label for="username">Name*</label>
-                        <input type="text" formControlName="name" id="name" class="form-control" required>
-                        <span class="text-danger" *ngIf="managerForm.controls['name'].dirty && managerForm.hasError('required','name')">*Name is required</span>
-
-                        <label for="role">Email*</label>
-                        <input type="email" formControlName="email" id="email" class="form-control" required email>
-                        <span class="text-danger" *ngIf="managerForm.controls['email'].dirty && managerForm.hasError('required','email')">*Email is required</span>
-
-                        <label for="password">Password*</label>
-                        <input type="password" formControlName="password" id="password" class="form-control">
-                        <span class="text-danger" *ngIf="managerForm.controls['password'].dirty && managerForm.hasError('required','password')">*Password is required</span>
-
-                        <label for="department">Department*</label>
-                        <input type="text" formControlName="department" id="department" class="form-control" required>
-                        <span class="text-danger" *ngIf="managerForm.controls['department'].dirty && managerForm.hasError('required','department')">*Department is required</span>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit" [disabled]="!managerForm.valid" class="btn btn-primary">Submit</button>
-                    </div>
-                    <a style="color:black; margin-top: 10px;" routerLink="/user"> Click here to add a User.</a>
-                </form>
-            </div>
-        </div>
+<form [formGroup]="managerForm" (ngSubmit)="loadManager()">
+    <!-- <div *ngIf="alert"  class="alert alert-success" role="alert">
+       Successfully Registered!
+      </div> -->
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Employee ID</label>
+      <input type="text" class="form-control" formControlName="id" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text"></div>
     </div>
-</div>
-</body>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Name</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="name" >
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="exampleInputPassword1" formControlName="email" >
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Department</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" formControlName="department" >
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" >
+      </div>
+      
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
