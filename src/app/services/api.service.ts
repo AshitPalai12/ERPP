@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,10 @@ export class ApiService {
   }
   deleteUser(id: any){
     return this.http.delete<any>('http://localhost:3000/users/'+id)
+  }
+
+  getUserById(id:any): Observable<any>{
+    return this.http.get<any>('http://localhost:3000/users/'+id)
   }
 
   postAdmin (data: any){

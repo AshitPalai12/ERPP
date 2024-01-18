@@ -19,7 +19,7 @@
     {
       "id": "101",
       "user_type": "Admin",
-      "fullname": "Jonga",
+      "fullnames": "Jonga",
       "department": "IT Admin",
       "email": "jonga@test.com",
       "password": "Jonga@123"
