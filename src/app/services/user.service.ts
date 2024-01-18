@@ -9,6 +9,9 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
   // create a user using the JSON server as backend 
+  createUser(body){
+    return this.http.post<any>('',body)
+  }
 
   //get the user from the JSON server
 

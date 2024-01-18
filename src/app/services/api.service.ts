@@ -14,10 +14,10 @@ export class ApiService {
   getUser(){
     return this.http.get<any>('http://localhost:3000/users')
   }
-  updateUser(id: number, data: any){
+  updateUser(id: any, data: any){
     return this.http.put<any>('http://localhost:3000/users/'+id, data)
   }
-  deleteUser(id: number){
+  deleteUser(id: any){
     return this.http.delete<any>('http://localhost:3000/users/'+id)
   }
 

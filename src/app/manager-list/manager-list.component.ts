@@ -10,10 +10,10 @@ import {MatTableDataSource} from '@angular/material/table';
 export class ManagerListComponent implements OnInit{
 
   constructor(private service:ApiService){}
+  
   managerList:any
   dataSource:any
-  displayedColumns: string[] = ['name', 'department']
-
+  displayedColumns: string[] = ['name','id','email', 'department','delete','update']
   displayManager(){
     this.service.getManager().subscribe((res)=>{
         this.managerList=res
@@ -30,5 +30,10 @@ export class ManagerListComponent implements OnInit{
     const filterValue = (event.target && event.target.value) ? event.target.value : '';
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  
+  delete(item:any){
+    this.service.deleteManager(item).subscribe((res)=>{
+      console.log(res)
+      this.dataSource.splice(item-1,1)
+    })
+  }
 }

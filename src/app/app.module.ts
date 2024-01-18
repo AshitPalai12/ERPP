@@ -20,13 +20,15 @@ import { UserService } from './services/user.service';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule} from 'ngx-toastr';
 
 import { AdminComponent } from './admin/admin.component';
 import { ManagerListComponent } from './manager-list/manager-list.component';
 import { ManagerDetailsComponent } from './manager-details/manager-details.component';
 import {MatTableModule} from '@angular/material/table'
 import {MatInputModule} from '@angular/material/input'
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -47,8 +49,8 @@ import {MatInputModule} from '@angular/material/input'
     UserDetailComponent,
     
     AdminComponent,
-          ManagerListComponent,
-          ManagerDetailsComponent,
+    ManagerListComponent,
+    ManagerDetailsComponent,
 
   ],
   imports: [
@@ -60,7 +62,9 @@ import {MatInputModule} from '@angular/material/input'
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule
     ],
   providers: [ApiService, AuthService, UserService],
   bootstrap: [AppComponent]

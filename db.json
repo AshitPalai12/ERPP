@@ -33,26 +33,64 @@
       "password": "Sunil@123"
     }
   ],
-  "users": [],
-
- 
-
-  
-
-  "managers": [
+  "users": [
     {
-      "id": "9696",
-      "name": "Jai",
-      "password": "Jai",
-      "email": "jai@gmail.com",
-      "department": "IT"
+      "name": "Apple",
+      "id": "Iphone123",
+      "email": "apple@gmail.com",
+      "password": "apple@023",
+      "department": "developer"
     },
     {
-      "id": "9898",
-      "name": "Sourabh Soni",
-      "password": "ss",
-      "email": "ss@gmail.com",
-      "department": "IT"
+      "name": "sunil Chouhan",
+      "id": "SunilRR",
+      "email": "RRR2023@gmail.com",
+      "password": "RRR2023",
+      "department": "Digital"
+    },
+    {
+      "id": "Mac123",
+      "name": "Macrosoft",
+      "email": "Mac123@gmail.com",
+      "password": "Mac123",
+      "department": "Analyst"
+    }
+  ],
+  "managers": [
+    {
+      "id": "1234",
+      "name": "John Doe",
+      "password": "john123",
+      "email": "john.doe@example.com",
+      "department": "HR"
+    },
+    {
+      "id": "5678",
+      "name": "Alice Johnson",
+      "password": "alice567",
+      "email": "alice.j@example.com",
+      "department": "Marketing"
+    },
+    {
+      "id": "8765",
+      "name": "Bob Smith",
+      "password": "bob789",
+      "email": "bob.smith@example.com",
+      "department": "Finance"
+    },
+    {
+      "id": "4567",
+      "name": "Mia Rodriguez",
+      "password": "mia456",
+      "email": "mia.r@example.com",
+      "department": "Sales"
+    },
+    {
+      "id": "3344",
+      "name": "Ryan Patel",
+      "password": "ryan123",
+      "email": "ryan.p@example.com",
+      "department": "Engineering"
     }
   ],
   "admin": []
