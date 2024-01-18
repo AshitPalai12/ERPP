@@ -30,6 +30,8 @@ import {MatInputModule} from '@angular/material/input'
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { ProfileComponent } from './profile/profile.component';
+import { ManagerLoginComponent } from './manager-login/manager-login.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 
 
@@ -53,6 +55,8 @@ import { ProfileComponent } from './profile/profile.component';
     ManagerListComponent,
     ManagerDetailsComponent,
     ProfileComponent,
+    ManagerLoginComponent,
+    UserLoginComponent,
 
   ],
   imports: [

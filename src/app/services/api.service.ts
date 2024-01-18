@@ -55,11 +55,11 @@ export class ApiService {
   
   loggedIn : boolean =false;
 
-  login(){
+  Login(){
     this.loggedIn = true;
   }
 
-  logout(){
+  Logout(){
     this.loggedIn = false;
   }
 
