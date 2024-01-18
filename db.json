@@ -61,6 +61,13 @@
       "email": "eti@gmail.com",
       "password": "Eti@12345",
       "department": "HR"
+    },
+    {
+      "id": "BodmashAunty69",
+      "name": "Bodmash Aunty",
+      "email": "bodmashaunty69@test.com",
+      "password": "BodmashAunty@69",
+      "department": "Aunty"
     }
   ],
   "managers": [
