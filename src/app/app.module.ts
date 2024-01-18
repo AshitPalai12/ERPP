@@ -33,6 +33,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { FinanceComponent } from './Finance/finance/finance.component';
 import { FinanceService } from './Finance/finance-service.service';
 import { ManagerLoginComponent } from './manager-login/manager-login.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 
 
@@ -57,6 +58,8 @@ import { ManagerLoginComponent } from './manager-login/manager-login.component';
     ManagerDetailsComponent,
     ProfileComponent,
     FinanceComponent,
+    ManagerLoginComponent,
+    UserLoginComponent,
 
   ],
   imports: [
