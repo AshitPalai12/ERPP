@@ -13,10 +13,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { FinanceComponent } from './Finance/finance/finance.component';
 import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ManagerLoginComponent } from './manager-login/manager-login.component';
 
 const routes: Routes = [
 
   {path:'', component:HomeComponent, title:'Home'},
+  {path:'home', component:HomeComponent, title:'Home'},
   
   {path:'about', component:AboutComponent, title:'About'},
   {path:'contact', component:ContactComponent, title:'ContactUs'},
@@ -27,7 +29,9 @@ const routes: Routes = [
   {path:'admin', component:UserListComponent, title:'Admin'},
   {path:'manager-list', component:ManagerListComponent, title:'Manager-List',canActivate:[AuthGuard]},
   {path: 'profile', component: ProfileComponent, title: 'Profile'},
+  {path: 'manager-login', component: ManagerLoginComponent, title: 'Manager-Login'},
   {path: 'finance', component: FinanceComponent, title: 'Finance'},
+  
   {path:'user-detail/:id',component: UserDetailComponent, title: 'User-detail'},
   {path:'**', component:NotfoundComponent, title:'Error'}
  
