@@ -16,7 +16,7 @@ export class ManagerLoginComponent implements OnInit{
   }
   userData: any;
   filteredData: any;
-  public loginForm: FormGroup
+  loginForm!:FormGroup
   ngOnInit() { 
   
   this.loginForm = new FormGroup({
