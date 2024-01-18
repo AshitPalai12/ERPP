@@ -14,6 +14,7 @@ import { FinanceComponent } from './Finance/finance/finance.component';
 import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ManagerLoginComponent } from './manager-login/manager-login.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 const routes: Routes = [
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'manager-list', component:ManagerListComponent, title:'Manager-List',canActivate:[AuthGuard]},
   {path: 'profile', component: ProfileComponent, title: 'Profile'},
   {path: 'manager-login', component: ManagerLoginComponent, title: 'Manager-Login'},
+  {path: 'user-login', component: UserLoginComponent, title: 'User-Login'},
   {path: 'finance', component: FinanceComponent, title: 'Finance'},
   
   {path:'user-detail/:id',component: UserDetailComponent, title: 'User-detail'},
