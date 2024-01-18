@@ -16,7 +16,7 @@
                     <div class="form-group">
                         <label for="name">Name*</label>
                         <input type="text" formControlName="name" id="name" class="form-control">
-                        
+
     
                         <label for="id">UserId*</label>
                         <input type="text" formControlName="id" id="id" class="form-control">
@@ -106,6 +106,7 @@
                       <mat-icon mat-fab color="primary" aria-label="Example icon button with a delete icon">delete</mat-icon>
                     </button>
                   </div>
+                  <a [routerLink]="'/user-detail/' + user.id">More</a>
                 </td>
               </ng-container>
               
