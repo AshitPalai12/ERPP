@@ -8,10 +8,12 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./manager-list.component.css']
 })
 export class ManagerListComponent implements OnInit{
+
   constructor(private service:ApiService){}
   managerList:any
   dataSource:any
   displayedColumns: string[] = ['name', 'department']
+
   displayManager(){
     this.service.getManager().subscribe((res)=>{
         this.managerList=res
@@ -19,11 +21,14 @@ export class ManagerListComponent implements OnInit{
 
     })
   }
+
   ngOnInit(): void {
     this.displayManager()
   }
+
   applyFilter(event: any): void {
     const filterValue = (event.target && event.target.value) ? event.target.value : '';
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+  
 }

@@ -37,14 +37,6 @@ export class LoginComponent implements OnInit {
             console.log('passcheck');
             this.loginForm.reset();
             this.router.navigate(['/home']);
-            // if(this.filteredData.isactive){
-            //   console.log('active');        
-            //   sessionStorage.setItem('youremailaddress',this.filteredData.email),
-            //   sessionStorage.setItem('role',this.filteredData.role),
-            //   this.router.navigate(['job-list']);
-            // }else{
-            //   // console.log('false');        
-            // }
           } else {
             alert('Invalid Email or Password');
           }
