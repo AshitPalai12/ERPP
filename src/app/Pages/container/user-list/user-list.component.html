@@ -141,10 +141,12 @@
                                 <mat-icon mat-fab color="primary"
                                     aria-label="Example icon button with a delete icon">delete</mat-icon>
                             </button>
-                            <button>
+                            <button mat-icon-button [routerLink]="'/user-detail/' + user.id" matTooltip="More Actions"
+                                class="mat-warn">
+                                <mat-icon mat-fab color="primary" aria-label="More icon button">more_vert</mat-icon>
 
-                                <a [routerLink]="'/user-detail/' + user.id" class="mat-button">More</a>
                             </button>
+
                         </div>
                     </td>
                 </ng-container>
