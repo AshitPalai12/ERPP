@@ -38,8 +38,8 @@
     {
       "id": "1234",
       "name": "John Doe",
-      "password": "john123",
       "email": "john.doe@example.com",
+      "password": "john123",
       "department": "HR"
     },
     {

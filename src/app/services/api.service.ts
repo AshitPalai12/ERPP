@@ -40,6 +40,9 @@ export class ApiService {
   getManager(){
     return this.http.get<any>('http://localhost:3000/managers')
   }
+  getManagerById(id:any){
+    return this.http.get<any>('http://localhost:3000/managers/'+id)
+  }
   updateManager(id: number, data: any){
     return this.http.put<any>('http://localhost:3000/managers/'+id, data)
   }

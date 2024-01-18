@@ -9,6 +9,7 @@ import { UserListComponent } from './Pages/container/user-list/user-list.compone
 import { ManagerComponent } from './manager/manager.component';
 import { ManagerListComponent } from './manager-list/manager-list.component';
 import { AboutComponent } from './Pages/about/about.component';
+import { ManagerUpdateComponent } from './manager-update/manager-update.component';
 
 const routes: Routes = [
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'manager', component:ManagerComponent, title:'Manager'},
   {path:'admin', component:UserListComponent, title:'Admin'},
   {path:'manager-list', component:ManagerListComponent, title:'Manager-List'},
+  {path:'manager-update/:id', component:ManagerUpdateComponent, title:'Manager-Update'},
   {path:'**', component:NotfoundComponent, title:'Error'},
  
 ];
