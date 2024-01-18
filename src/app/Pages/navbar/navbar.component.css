@@ -20,7 +20,7 @@ img {
   .d-flex {
     display: flex;
     justify-content: flex-end; /* Align items to the right */
-    margin-left: 750px; /* Adjust margin as needed for spacing */
+    margin-left: 700px; /* Adjust margin as needed for spacing */
   }
   
   

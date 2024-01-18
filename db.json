@@ -54,6 +54,13 @@
       "email": "Mac123@gmail.com",
       "password": "Mac123",
       "department": "Analyst"
+    },
+    {
+      "id": "Eti12",
+      "name": "Eti",
+      "email": "eti@gmail.com",
+      "password": "Eti@12345",
+      "department": "HR"
     }
   ],
   "managers": [
