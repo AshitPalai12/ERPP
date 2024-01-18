@@ -19,11 +19,11 @@ export class ManagerComponent  implements OnInit{
   ngOnInit(){
 
     this.managerForm = this.fb.group({
-      id:this.fb.control('',Validators.required),
-      name:this.fb.control('',Validators.required),
-      password:this.fb.control('',Validators.required),
-      email:this.fb.control('',Validators.required),
-      department:this.fb.control('',Validators.required)
+      id:this.fb.control('',[Validators.required]),
+      name:this.fb.control('',[Validators.required]),
+      password:this.fb.control('', [Validators.required, Validators.minLength(6),Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]),
+      email:this.fb.control('',[Validators.required]),
+      department:this.fb.control('',[Validators.required])
     })
 
   }
