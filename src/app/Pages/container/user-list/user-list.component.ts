@@ -31,9 +31,9 @@ export class UserListComponent implements OnInit {
     this.userForm = this.fb.group({
       name: [null, [Validators.required]],
       id: [null, [Validators.required]],
-      email: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required]],
-      department: [null, [Validators.required]]
+      department: [null, [Validators.required,Validators.pattern]]
     })
 
     this.fetchUser();
