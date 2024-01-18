@@ -30,8 +30,8 @@ import {MatInputModule} from '@angular/material/input'
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { ProfileComponent } from './profile/profile.component';
-import { ManagerLoginComponent } from './manager-login/manager-login.component';
-import { UserLoginComponent } from './user-login/user-login.component';
+import { FinanceComponent } from './Finance/finance/finance.component';
+import { FinanceService } from './Finance/finance-service.service';
 
 
 
@@ -55,8 +55,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
     ManagerListComponent,
     ManagerDetailsComponent,
     ProfileComponent,
-    ManagerLoginComponent,
-    UserLoginComponent,
+    FinanceComponent,
 
   ],
   imports: [
@@ -72,7 +71,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
     MatIconModule,
     MatButtonModule
     ],
-  providers: [ApiService, AuthService, UserService],
+  providers: [ApiService, AuthService, UserService, FinanceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

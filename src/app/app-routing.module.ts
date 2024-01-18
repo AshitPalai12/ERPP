@@ -10,9 +10,8 @@ import { ManagerComponent } from './manager/manager.component';
 import { ManagerListComponent } from './manager-list/manager-list.component';
 import { AboutComponent } from './Pages/about/about.component';
 import { ProfileComponent } from './profile/profile.component';
-import { AuthGuard } from './guards/auth.guard';
-import { ManagerLoginComponent } from './manager-login/manager-login.component';
-import { UserLoginComponent } from './user-login/user-login.component';
+import { FinanceComponent } from './Finance/finance/finance.component';
+import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
 
 const routes: Routes = [
 
@@ -27,8 +26,8 @@ const routes: Routes = [
   {path:'admin', component:UserListComponent, title:'Admin'},
   {path:'manager-list', component:ManagerListComponent, title:'Manager-List',canActivate:[AuthGuard]},
   {path: 'profile', component: ProfileComponent, title: 'Profile'},
-  {path: 'manager-login', component: ManagerLoginComponent, title: 'Manager-Login'},
-  {path: 'user-login', component: UserLoginComponent, title: 'User-Login'},
+  {path: 'finance', component: FinanceComponent, title: 'Finance'},
+  {path:'user-detail/:id',component: UserDetailComponent, title: 'User-detail'},
   {path:'**', component:NotfoundComponent, title:'Error'}
  
 ];
