@@ -12,6 +12,7 @@ import { AboutComponent } from './Pages/about/about.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FinanceComponent } from './Finance/finance/finance.component';
 import { UserDetailComponent } from './Pages/container/user-detail/user-detail.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
 
