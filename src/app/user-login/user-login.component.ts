@@ -1,16 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from 'src/app/services/api.service';
-// import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { ApiService } from '../services/api.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-user-login',
+  templateUrl: './user-login.component.html',
+  styleUrls: ['./user-login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class UserLoginComponent implements OnInit {
   Login:boolean=false
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router,private service:ApiService) {
     sessionStorage.clear();
@@ -27,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     // debugger
-    this.http.get<any>('http://localhost:3000/employers')
+    this.http.get<any>('http://localhost:3000/users')
       .subscribe(res => {
           console.log('res', res);
           this.userData = res;
@@ -51,11 +50,3 @@ export class LoginComponent implements OnInit {
         })
   }
 }
- // if(this.filteredData.isactive){
-            //   console.log('active');        
-            //   sessionStorage.setItem('youremailaddress',this.filteredData.email),
-            //   sessionStorage.setItem('role',this.filteredData.role),
-            //   this.router.navigate(['job-list']);
-            // }else{
-            //   // console.log('false');        
-            // }

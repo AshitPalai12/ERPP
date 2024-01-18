@@ -11,7 +11,7 @@ export class NavbarComponent {
   
   constructor(private api: ApiService, private router: Router){}
 logout(){
-  this.api.logout();
+  this.api.Logout();
   this.router.navigate(["/login"])
 }
 }
