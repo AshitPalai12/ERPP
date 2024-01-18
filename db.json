@@ -107,5 +107,13 @@
       "department": "eqdeqio"
     }
   ],
-  "admin": []
+  "admin": [],
+  "transactions": [
+    {
+      "id": "a499",
+      "date": "2024-01-18",
+      "category": "Food",
+      "amount": 1200
+    }
+  ]
 }
