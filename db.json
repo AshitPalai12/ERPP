@@ -54,14 +54,21 @@
       "email": "Mac123@gmail.com",
       "password": "Mac123",
       "department": "Analyst"
+    },
+    {
+      "id": "Eti12",
+      "name": "Eti",
+      "email": "eti@gmail.com",
+      "password": "Eti@12345",
+      "department": "HR"
     }
   ],
   "managers": [
     {
       "id": "1234",
       "name": "John Doe",
-      "password": "john123",
       "email": "john.doe@example.com",
+      "password": "john123",
       "department": "HR"
     },
     {
@@ -91,6 +98,13 @@
       "password": "ryan123",
       "email": "ryan.p@example.com",
       "department": "Engineering"
+    },
+    {
+      "id": "0987765544",
+      "name": "hh",
+      "password": "edbdbqudbwqudbwqdoqwbdoqw",
+      "email": "ff@gmail.com",
+      "department": "eqdeqio"
     }
   ],
   "admin": []
