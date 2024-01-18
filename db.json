@@ -75,27 +75,27 @@
       "id": "1234",
       "name": "John Doe",
       "email": "john.doe@example.com",
-      "password": "john123",
+      "password": "John@123",
       "department": "HR"
     },
     {
       "id": "5678",
       "name": "Alice Johnson",
-      "password": "alice567",
+      "password": "Alice@567",
       "email": "alice.j@example.com",
       "department": "Marketing"
     },
     {
       "id": "8765",
       "name": "Bob Smith",
-      "password": "bob789",
+      "password": "Bob@789",
       "email": "bob.smith@example.com",
       "department": "Finance"
     },
     {
       "id": "4567",
       "name": "Mia Rodriguez",
-      "password": "mia456",
+      "password": "Mia@456",
       "email": "mia.r@example.com",
       "department": "Sales"
     },
@@ -112,6 +112,13 @@
       "password": "edbdbqudbwqudbwqdoqwbdoqw",
       "email": "ff@gmail.com",
       "department": "eqdeqio"
+    },
+    {
+      "id": "1212",
+      "name": "1212",
+      "password": "1212",
+      "email": "1212",
+      "department": "1212"
     }
   ],
   "admin": [],
