@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
   
   this.loginForm = new FormGroup({
     "youremailaddress": new FormControl('', [Validators.email, Validators.required]),
-    "yourpassword": new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)])
+    "yourpassword": new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]),
+    "role": new FormControl('', [ Validators.required])
   })}
 
   login() {
@@ -33,13 +34,15 @@ export class LoginComponent implements OnInit {
           this.userData = res;
           const emailAdded = this.loginForm.value.youremailaddress;
           const emailPassword = this.loginForm.value.yourpassword;
+          const role = this.loginForm.value.role;
           this.filteredData = this.userData.find((each: any) => each.email === emailAdded);
           console.log('dataModify', this.filteredData);
-          if (this.filteredData.password === emailPassword) {
+          if (this.filteredData.password === emailPassword && this.filteredData.user_type === role) {
+            sessionStorage.setItem("role",this.userData.user_type)
             console.log('passcheck');
             this.service.Login()
             this.loginForm.reset();
-            this.router.navigate(['/home']);
+            this.router.navigate(['/']);
            
           } else {
             alert('Invalid Email or Password');

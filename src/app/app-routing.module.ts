@@ -20,16 +20,15 @@ import { CreateProjectComponent } from './project/create-project/create-project.
 const routes: Routes = [
 
   {path:'', component:HomeComponent, title:'Home'},
-  {path:'home', component:HomeComponent, title:'Home'},
   
   {path:'about', component:AboutComponent, title:'About'},
   {path:'contact', component:ContactComponent, title:'ContactUs'},
   {path:'login', component:LoginComponent, title:'Login'},
   {path:'register', component:RegisterComponent, title:'Register'},
-  {path:'user', component:UserListComponent, title:'User'},
+  {path:'user', component:UserListComponent, title:'User',},
   {path:'manager', component:ManagerComponent, title:'Manager'},
   {path:'admin', component:UserListComponent, title:'Admin'},
-  {path:'manager-list', component:ManagerListComponent, title:'Manager-List',canActivate:[AuthGuard]},
+  {path:'manager-list', component:ManagerListComponent, title:'Manager-List',},
   {path: 'profile', component: ProfileComponent, title: 'Profile'},
   {path: 'manager-login', component: ManagerLoginComponent, title: 'Manager-Login'},
   {path: 'user-login', component: UserLoginComponent, title: 'User-Login'},

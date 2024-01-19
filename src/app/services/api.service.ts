@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-
+  
   postUser (data: any){
     return this.http.post<any>('http://localhost:3000/users', data)
   }
@@ -70,5 +70,8 @@ export class ApiService {
 
   IsAuthenticated(){
     return this.loggedIn;
+  }
+  getUserRole(){
+    return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():''
   }
 }

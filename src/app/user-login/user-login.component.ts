@@ -38,7 +38,7 @@ export class UserLoginComponent implements OnInit{
             console.log('passcheck');
             this.service.Login()
             this.loginForm.reset();
-            this.router.navigate(['/home']);
+            this.router.navigate(['/']);
            
           } else {
             alert('Invalid Email or Password');
