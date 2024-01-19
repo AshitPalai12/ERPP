@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-// import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +10,14 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  Login:boolean=false
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router,private service:ApiService) {
+  // Flag indicating whether the user is logged in
+  Login: boolean = false;
+
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private service: ApiService) {
+    // Clear session storage when the component is initialized
     sessionStorage.clear();
   }
+
   userData: any;
   filteredData: any;
   public loginForm: FormGroup
@@ -26,8 +29,13 @@ export class LoginComponent implements OnInit {
     "role": new FormControl('', [ Validators.required])
   })}
 
+
+
+  /**
+   * Attempts to log in the user by sending a request to the server with provided credentials.
+   */
   login() {
-    // debugger
+    // Send an HTTP GET request to the server to fetch user data
     this.http.get<any>('http://localhost:3000/employers')
       .subscribe(res => {
           console.log('res', res);
@@ -50,15 +58,33 @@ export class LoginComponent implements OnInit {
         }, error => {
           console.log(error, 'err');
 
-          alert("Something went wrong!!");
-        })
+        // Assign the response to the userData variable
+       
+
+        // Extract email and password from the login form
+        const emailAdded = this.loginForm.value.youremailaddress;
+        const emailPassword = this.loginForm.value.yourpassword;
+
+        // Find a user in userData with matching email
+        this.filteredData = this.userData.find((each: any) => each.email === emailAdded);
+
+        // Check if the password matches the user's password
+        if (this.filteredData.password === emailPassword) {
+          console.log('passcheck');
+
+          // Set the Login flag to true
+          this.service.Login();
+
+          // Reset the login form
+          this.loginForm.reset();
+
+          // Navigate to the 'home' route
+          this.router.navigate(['/home']);
+
+        } else {
+          // Show an alert for invalid email or password
+          alert('Invalid Email or Password');
+        }
+      });
   }
 }
- // if(this.filteredData.isactive){
-            //   console.log('active');        
-            //   sessionStorage.setItem('youremailaddress',this.filteredData.email),
-            //   sessionStorage.setItem('role',this.filteredData.role),
-            //   this.router.navigate(['job-list']);
-            // }else{
-            //   // console.log('false');        
-            // }

@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
 
   constructor(private router: Router,private service:ApiService,private toastr:ToastrService) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
     if (this.service.IsAuthenticated()){
       if (route.url.length>0){
         let menu=route.url[0].path
@@ -32,13 +32,5 @@ export class AuthGuard implements CanActivate {
         return false
       }
     }
-    else{
-      this.router.navigate(['/login'])
-      return false
-     
-    }
-   
-
-   
   }
 }

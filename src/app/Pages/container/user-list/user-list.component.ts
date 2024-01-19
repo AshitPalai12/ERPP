@@ -21,12 +21,17 @@ export class UserListComponent implements OnInit {
 
   currentId:string = '';
 
+
+
+  //construt the instance of the services and for the form.
   constructor(private fb: FormBuilder,private _apiService:ApiService, private toastr:ToastrService) {
   }
 
   dataSource:any;
   displayedColumns: string[] = ['userid','name', 'department', 'email', 'actions'];
 
+
+  //create a reactive form.
   ngOnInit() {
     this.userForm = this.fb.group({
       name: [null, [Validators.required]],
@@ -39,13 +44,16 @@ export class UserListComponent implements OnInit {
     this.fetchUser();
 
   }
-
+ 
+  //if empty form is submitted by the user then show the alert to the user.
   onEmptySubmit() {
     if (this.userForm.invalid) {
       alert('Please enter the required fields!!')
     }
   }
 
+
+  //change the setting of the form to create user and listing
   jobForm(){
     this.isCreating = !this.isCreating;
     if(!this.isCreating){
@@ -63,7 +71,7 @@ export class UserListComponent implements OnInit {
        this.isCreating = false;
        this.fetchUser();
        this.userForm.reset();
-      })
+      },(err)=>{this.toastr.error("Error to Update data to the server")})
 
     }
     else{
@@ -75,12 +83,14 @@ export class UserListComponent implements OnInit {
         this.isCreating=false;
         this.fetchUser();
         this.userForm.reset();
+      },(err)=>{
+        this.toastr.error("Error to Update data to the server")
       })
     }
 
   }
 
-  //get the user
+  //get the user from the db server
   onUserfetch(){
     this.fetchUser();
   }
@@ -91,10 +101,12 @@ export class UserListComponent implements OnInit {
       this.users=res;
       this.dataSource=new MatTableDataSource(this.users)
       this.toastr.success("User has been successfully fetched")
+    },(err)=>{
+      this.toastr.error("Error to fetch data from the server")
     })
   }
 
-  //update the user
+  //update the user in the form to updata the data of the user.
   editUser(id){
 
     this.currentId=id;
@@ -116,7 +128,7 @@ export class UserListComponent implements OnInit {
 
   }
 
-  //delete the user
+  //delete the user from the server using the id of the user.
   deleteUser(id){
 
     const userResponse = window.confirm("Do you want delete this user??")
@@ -125,7 +137,7 @@ export class UserListComponent implements OnInit {
       this._apiService.deleteUser(id).subscribe(()=>{
         this.fetchUser();
         this.toastr.success("User has been successfully deleted")
-      })
+      },(err)=>{this.toastr.error("Error to delete data from the server")})
     }
     else{
       return
@@ -133,6 +145,7 @@ export class UserListComponent implements OnInit {
 
   }
 
+  //method to search the data by the search input from the user on the b=webpage
   applyFilter(event: any): void {
     const filterValue = (event.target && event.target.value) ? event.target.value : '';
     this.dataSource.filter = filterValue.trim().toLowerCase();
