@@ -2,26 +2,37 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ApiService } from '../services/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private router: Router, private service: ApiService) { }
 
-  // Determines whether the user is allowed to activate the route
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      
-    // Check if the user is authenticated
-    if (this.service.IsAuthenticated()) {
-      return true; // User is authenticated, allow access
-    } else {
-      // User is not authenticated, redirect to the login page
-      this.router.navigate(['/login']);
-      return false; // Do not allow access
+  constructor(private router: Router,private service:ApiService,private toastr:ToastrService) { }
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    if (this.service.IsAuthenticated()){
+      if (route.url.length>0){
+        let menu=route.url[0].path
+        if(menu=='user'|| menu=='manager-list'){
+          if(this.service.getUserRole()==='Admin'){
+            return true
+          }
+          else{
+            this.toastr.warning('You are not allowed as you are not admin')
+            this.router.navigate(['/login'])
+            return false
+          }
+        }
+        else{
+          return true
+        }
+      }else{
+        return false
+      }
+  
     }
   }
 }

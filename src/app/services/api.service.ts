@@ -11,11 +11,14 @@ export class ApiService {
   // Constructor to inject HttpClient
   constructor(private http: HttpClient) { }
 
+
+
   // User-related methods
 
   // Method to post user data to the server
   postUser(data: any): Observable<any> {
     return this.http.post<any>('http://localhost:3000/users', data);
+
   }
 
   // Method to get user data from the server
@@ -105,5 +108,8 @@ export class ApiService {
   // Method to check if the user is authenticated
   IsAuthenticated() {
     return this.loggedIn;
+  }
+  getUserRole(){
+    return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():''
   }
 }

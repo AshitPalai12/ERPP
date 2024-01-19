@@ -48,42 +48,28 @@ export class UserLoginComponent implements OnInit {
     // Make an HTTP GET request to fetch user data
     this.http.get<any>('http://localhost:3000/users')
       .subscribe(res => {
-        // Log the response
-        console.log('res', res);
 
-        // Assign response to userData variable
-        this.userData = res;
+          console.log('res', res);
+          this.userData = res;
+          const emailAdded = this.loginForm.value.youremailaddress;
+          const emailPassword = this.loginForm.value.yourpassword;
+          this.filteredData = this.userData.find((each: any) => each.email === emailAdded);
+          console.log('dataModify', this.filteredData);
+          if (this.filteredData.password === emailPassword) {
+            console.log('passcheck');
+            this.service.Login()
+            this.loginForm.reset();
+            this.router.navigate(['/']);
+           
+          } else {
+            alert('Invalid Email or Password');
+          }
+        }, error => {
+          console.log(error, 'err');
 
-        // Extract email and password from the login form
-        const emailAdded = this.loginForm.value.youremailaddress;
-        const emailPassword = this.loginForm.value.yourpassword;
+          alert("Something went wrong!!");
+        })
 
-        // Find user data that matches the provided email
-        this.filteredData = this.userData.find((each: any) => each.email === emailAdded);
-
-        // Check if the provided password matches the user's password
-        if (this.filteredData.password === emailPassword) {
-          // Log successful login check
-          console.log('passcheck');
-
-          // Set login status to true
-          this.service.Login();
-
-          // Reset the login form
-          this.loginForm.reset();
-
-          // Navigate to the home page
-          this.router.navigate(['/home']);
-        } else {
-          // Display toastr info message for invalid email or password
-          this.toastr.info('Invalid Email or Password');
-        }
-      }, error => {
-        // Log error if there's an issue with the HTTP request
-        console.log(error, 'err');
-
-        // Display toastr info message for a generic error
-        this.toastr.info("Something went wrong!!");
-      });
+       
   }
 }
