@@ -10,16 +10,16 @@ export class FinanceService {
   constructor(private http: HttpClient) { }
 
   postTransaction (data: any){
-    return this.http.post<any>("http://localhost:3000/transactions", data)
+    return this.http.post<any>("https://erpp-api.onrender.com/transactions", data)
   }
   getTransaction (){
-    return this.http.get<any>("http://localhost:3000/transactions")
+    return this.http.get<any>("https://erpp-api.onrender.com/transactions")
   }
   updateTransaction(data: any, id: number){
-    return this.http.put<any>("http://localhost:3000/transactions/"+id, data)
+    return this.http.put<any>("https://erpp-api.onrender.com/transactions/"+id, data)
   }
   deleteTransaction(id:number){
-    return this.http.delete<any>("http://localhost:3000/transactions/"+id)
+    return this.http.delete<any>("https://erpp-api.onrender.com/transactions/"+id)
   }
 }
 

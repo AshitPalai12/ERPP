@@ -9,7 +9,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AuthGuard implements CanActivate {
 
-
   constructor(private router: Router,private service:ApiService,private toastr:ToastrService) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
