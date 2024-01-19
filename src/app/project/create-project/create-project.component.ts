@@ -39,6 +39,8 @@ export class CreateProjectComponent {
  
     this.fetchProject();
   }
+
+  //project is reset if it's not creating user
  
   PProjectForm(){
     this.isCreating = !this.isCreating;
@@ -48,14 +50,12 @@ export class CreateProjectComponent {
     }
  
   }
+
+  //submit the form and do the post and update method to the users in the server
  
   onFormSubmit(){
     console.log('hello')
     if (!this.isEditMode) {
-      console.log('hello post method')
-      console.log(this.projectForm)
- 
- 
       this.apiService.postAdmin(this.projectForm.value).subscribe((res) => {
         console.log(res);
        
@@ -63,7 +63,7 @@ export class CreateProjectComponent {
         this.isCreating = false;
         this.fetchProject();
         this.projectForm.reset();
-      })
+      },(err)=>{this.toastr.error("Error to post data to the server")})
  
     }
     else {
@@ -75,7 +75,7 @@ export class CreateProjectComponent {
         this.isCreating = false;
         this.fetchProject();
         this.projectForm.reset();
-      })
+      },(err)=>{this.toastr.error("Error to Update data to the server")})
     }
  
  
@@ -91,7 +91,8 @@ onProjectfetch(){
     this.projects = res;
     this.dataSource = new MatTableDataSource(this.projects)
     this.toastr.success("Project has been successfully fetched")
-  })
+  },(err)=>{this.toastr.error("Error to fetch data to the server")}
+  )
 }
  
 //update the project
@@ -119,7 +120,7 @@ editProject(id: any){
  
 }
  
-//delete the project
+//delete the project from the user.
 deleteProject(id){
  
   const projectResponse = window.confirm("Do you want delete this project?")
@@ -128,7 +129,8 @@ deleteProject(id){
     this.apiService.deleteAdmin(id).subscribe(() => {
       this.fetchProject();
       this.toastr.success("Project has been successfully deleted")
-    })
+    },(err)=>{this.toastr.error("Error to delete data to the server")}
+    )
   }
   else {
     return
@@ -136,7 +138,7 @@ deleteProject(id){
  
 }
  
- 
+ //method to filter the data on the basis of the search entered by the user.
 applyFilter(event: any): void {
   const filterValue = (event.target && event.target.value) ? event.target.value : '';
   this.dataSource.filter = filterValue.trim().toLowerCase();

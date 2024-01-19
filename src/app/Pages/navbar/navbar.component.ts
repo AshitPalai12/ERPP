@@ -8,10 +8,12 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  
-  constructor(private api: ApiService, private router: Router){}
-logout(){
-  this.api.Logout();
-  this.router.navigate(["/login"])
-}
+
+  constructor(private api: ApiService, private router: Router) { }
+
+  //navigate the authenticated user to the login page on logout
+  logout() {
+    this.api.Logout();
+    this.router.navigate(["/login"])
+  }
 }
