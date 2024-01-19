@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
       this.showProfiles();
   }
 
+  //user profile on login
   showProfiles(){
     this.http.get<any>('http://localhost:3000/users')
     .subscribe(res=>{
