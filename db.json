@@ -134,39 +134,25 @@
   ],
   "transactions": [
     {
-      "id": 0,
-      "title": "GTE treat",
-      "category": "Food",
-      "date": "2024-01-20",
-      "amount": null
-    },
-    {
-      "id": 0,
       "title": "Bus",
-      "category": "travel",
-      "date": "2024-01-20",
-      "amount": 3000
+      "category": "Travel",
+      "date": "2024-01-16",
+      "amount": 10000,
+      "id": "cc68"
     },
     {
-      "id": 0,
-      "title": "er",
-      "category": "er",
-      "date": "2024-01-05",
-      "amount": 34
+      "id": "22f5",
+      "title": "Dinner",
+      "category": "Food",
+      "date": "2024-01-17",
+      "amount": 12000
     },
     {
-      "id": null,
-      "title": "we",
-      "category": "we",
-      "date": "2024-01-04",
-      "amount": 23
-    },
-    {
-      "id": 0,
-      "title": "we",
-      "category": "we",
-      "date": "2024-01-05",
-      "amount": 23
+      "id": "5767",
+      "title": "Udmey",
+      "category": "Education",
+      "date": "2024-01-19",
+      "amount": 499
     }
   ]
 }

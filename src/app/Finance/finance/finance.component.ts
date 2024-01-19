@@ -67,6 +67,7 @@ export class FinanceComponent implements OnInit {
     })
   }
   deleteTransaction(row: any){
+    debugger
     this.fService.deleteTransaction(row.id)
     .subscribe(res=>{
       this.toastr.success("Deleted Successfully");

@@ -1,10 +1,21 @@
 export class Transaction{
-  id: number=0;
+  id: number;
   title: string ='';
   date: Date;
   category: string ='';
   amount: number;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
