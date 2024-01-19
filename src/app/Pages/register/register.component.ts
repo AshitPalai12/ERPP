@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ export class RegisterComponent implements OnInit {
 
   public signupForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router,private toastr:ToastrService) { }
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
       id: ['', Validators.required],
@@ -27,11 +28,11 @@ export class RegisterComponent implements OnInit {
   signUp() {
     this.http.post<any>("http://localhost:3000/employers", this.signupForm.value)
       .subscribe(res => {
-        alert("Signup Successfull");
+        this.toastr.info("Signup Successfull")
         this.signupForm.reset();
         this.router.navigate(['login']);
       }, error => {
-        alert("Something went wrong")
+        this.toastr.error("Something went wrong");
       })
   }
 }
