@@ -58,33 +58,9 @@ export class LoginComponent implements OnInit {
         }, error => {
           console.log(error, 'err');
 
-        // Assign the response to the userData variable
-       
+          alert("Something went wrong!!");
+        })
 
-        // Extract email and password from the login form
-        const emailAdded = this.loginForm.value.youremailaddress;
-        const emailPassword = this.loginForm.value.yourpassword;
-
-        // Find a user in userData with matching email
-        this.filteredData = this.userData.find((each: any) => each.email === emailAdded);
-
-        // Check if the password matches the user's password
-        if (this.filteredData.password === emailPassword) {
-          console.log('passcheck');
-
-          // Set the Login flag to true
-          this.service.Login();
-
-          // Reset the login form
-          this.loginForm.reset();
-
-          // Navigate to the 'home' route
-          this.router.navigate(['/home']);
-
-        } else {
-          // Show an alert for invalid email or password
-          alert('Invalid Email or Password');
-        }
-      });
+      
   }
 }

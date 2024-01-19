@@ -1,53 +1,82 @@
 import { Injectable } from '@angular/core';
-import { Transaction, Report } from './finance.model';
+// import { Transaction } from './finance.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FinanceService {
 
-  // Array to store transactions
-  private transactions: Transaction[] = [];
+  constructor(private http: HttpClient) { }
 
-  // Get all transactions
-  getTransactions(): Transaction[] {
-    return this.transactions;
+  postTransaction (data: any){
+    return this.http.post<any>("http://localhost:3000/transactions", data)
   }
-
-  // Add a new transaction
-  addTransaction(transaction: Transaction): void {
-    // Assign a unique ID to the transaction
-    transaction.id = this.transactions.length + 1;
-
-    // Add the transaction to the array
-    this.transactions.push(transaction);
+  getTransaction (){
+    return this.http.get<any>("http://localhost:3000/transactions")
   }
-
-  // Delete a transaction by ID
-  deleteTransaction(id: number): void {
-    // Filter out the transaction with the specified ID
-    this.transactions = this.transactions.filter((t) => t.id !== id);
+  updateTransaction(data: any, id: number){
+    return this.http.put<any>("http://localhost:3000/transactions/"+id, data)
   }
-
-  // Generate a financial report based on transactions
-  generateReport(transactions: Transaction[]): Report {
-    // Calculate total income by summing positive amounts
-    const income = transactions
-      .filter((t) => t.amount > 0)
-      .reduce((sum, t) => sum + t.amount, 0);
-
-    // Calculate total expenses by summing negative amounts
-    const expenses = transactions
-      .filter((t) => t.amount < 0)
-      .reduce((sum, t) => sum + t.amount, 0);
-
-    // Calculate net balance by adding income and subtracting expenses
-    const netBalance = income + expenses;
-
-    // Return a report object
-    return { income, expenses, netBalance };
+  deleteTransaction(id:number){
+    return this.http.delete<any>("http://localhost:3000/transactions/"+id)
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// private transactions: Transaction[] = [];
+
+// getTransactions(): Transaction[] {
+//   return this.transactions;
+// }
+
+// addTransaction(transaction: Transaction): void {
+//   transaction.id = this.transactions.length + 1;
+//   this.transactions.push(transaction);
+// }
+
+// deleteTransaction(id: number): void {
+//   this.transactions = this.transactions.filter((t) => t.id == id);
+// }
+
+// generateReport(transactions: Transaction[]): Report {
+//   const income = transactions
+//     .filter((t) => t.amount > 0)
+//     .reduce((sum, t) => sum + t.amount, 0);
+
+//   const expenses = transactions
+//     .filter((t) => t.amount < 0)
+//     .reduce((sum, t) => sum + t.amount, 0);
+
+//   const netBalance = income + expenses;
+
+//   return { income, expenses, netBalance };
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // import { Injectable } from '@angular/core';
