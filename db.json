@@ -121,7 +121,17 @@
       "department": "1212"
     }
   ],
-  "admin": [],
+  "admin": [
+    {
+      "name": "xner",
+      "description": "to do list",
+      "deadline": "2024-01-26",
+      "department": "dept2",
+      "manager": "sdm",
+      "teams": "s",
+      "id": "5dae"
+    }
+  ],
   "transactions": [
     {
       "id": "a499",

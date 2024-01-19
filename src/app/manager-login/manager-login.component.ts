@@ -11,9 +11,11 @@ import { ApiService } from '../services/api.service';
 })
 export class ManagerLoginComponent implements OnInit{
   Login:boolean=false
-  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router,private service:ApiService) {
-    sessionStorage.clear();
-  }
+  constructor(private http: HttpClient, 
+              private route: ActivatedRoute, 
+              private router: Router,
+              private service:ApiService) {sessionStorage.clear();}
+
   userData: any;
   filteredData: any;
   loginForm!:FormGroup
@@ -22,7 +24,8 @@ export class ManagerLoginComponent implements OnInit{
   this.loginForm = new FormGroup({
     "youremailaddress": new FormControl('', [Validators.email, Validators.required]),
     "yourpassword": new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)])
-  })}
+  })
+  }
 
   login() {
     // debugger

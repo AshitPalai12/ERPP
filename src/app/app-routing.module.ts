@@ -15,6 +15,7 @@ import { UserDetailComponent } from './Pages/container/user-detail/user-detail.c
 import { AuthGuard } from './guards/auth.guard';
 import { ManagerLoginComponent } from './manager-login/manager-login.component';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { CreateProjectComponent } from './project/create-project/create-project.component';
 
 const routes: Routes = [
 
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'finance', component: FinanceComponent, title: 'Finance'},
   
   {path:'user-detail/:id',component: UserDetailComponent, title: 'User-detail'},
+  {path:'projects',component:CreateProjectComponent},
   {path:'**', component:NotfoundComponent, title:'Error'}
  
 ];
