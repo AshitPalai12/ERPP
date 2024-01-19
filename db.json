@@ -134,10 +134,39 @@
   ],
   "transactions": [
     {
-      "id": "a499",
-      "date": "2024-01-18",
+      "id": 0,
+      "title": "GTE treat",
       "category": "Food",
-      "amount": 1200
+      "date": "2024-01-20",
+      "amount": null
+    },
+    {
+      "id": 0,
+      "title": "Bus",
+      "category": "travel",
+      "date": "2024-01-20",
+      "amount": 3000
+    },
+    {
+      "id": 0,
+      "title": "er",
+      "category": "er",
+      "date": "2024-01-05",
+      "amount": 34
+    },
+    {
+      "id": null,
+      "title": "we",
+      "category": "we",
+      "date": "2024-01-04",
+      "amount": 23
+    },
+    {
+      "id": 0,
+      "title": "we",
+      "category": "we",
+      "date": "2024-01-05",
+      "amount": 23
     }
   ]
 }

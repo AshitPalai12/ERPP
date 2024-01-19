@@ -1,41 +1,70 @@
 import { Injectable } from '@angular/core';
-import { Transaction, Report } from './finance.model';
+// import { Transaction } from './finance.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FinanceService {
 
-  private transactions: Transaction[] = [];
+  constructor(private http: HttpClient) { }
 
-  getTransactions(): Transaction[] {
-    return this.transactions;
+  postTransaction (data: any){
+    return this.http.post<any>("http://localhost:3000/transactions", data)
   }
-
-  addTransaction(transaction: Transaction): void {
-    transaction.id = this.transactions.length + 1;
-    this.transactions.push(transaction);
+  getTransaction (){
+    return this.http.get<any>("http://localhost:3000/transactions")
   }
-
-  deleteTransaction(id: number): void {
-    this.transactions = this.transactions.filter((t) => t.id == id);
+  updateTransaction(data: any, id: number){
+    return this.http.put<any>("http://localhost:3000/transactions/"+id, data)
   }
-
-  generateReport(transactions: Transaction[]): Report {
-    const income = transactions
-      .filter((t) => t.amount > 0)
-      .reduce((sum, t) => sum + t.amount, 0);
-
-    const expenses = transactions
-      .filter((t) => t.amount < 0)
-      .reduce((sum, t) => sum + t.amount, 0);
-
-    const netBalance = income + expenses;
-
-    return { income, expenses, netBalance };
+  deleteTransaction(id:number){
+    return this.http.delete<any>("http://localhost:3000/transactions/"+id)
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// private transactions: Transaction[] = [];
+
+// getTransactions(): Transaction[] {
+//   return this.transactions;
+// }
+
+// addTransaction(transaction: Transaction): void {
+//   transaction.id = this.transactions.length + 1;
+//   this.transactions.push(transaction);
+// }
+
+// deleteTransaction(id: number): void {
+//   this.transactions = this.transactions.filter((t) => t.id == id);
+// }
+
+// generateReport(transactions: Transaction[]): Report {
+//   const income = transactions
+//     .filter((t) => t.amount > 0)
+//     .reduce((sum, t) => sum + t.amount, 0);
+
+//   const expenses = transactions
+//     .filter((t) => t.amount < 0)
+//     .reduce((sum, t) => sum + t.amount, 0);
+
+//   const netBalance = income + expenses;
+
+//   return { income, expenses, netBalance };
+// }
 
 
 
