@@ -67,6 +67,7 @@ export class UserListComponent implements OnInit {
     if(!this.isEditMode){
 
       this._apiService.postUser(this.userForm.value).subscribe((res)=>{
+        console.log('hello from the user list')
        this.toastr.success("User has been successfully registered")
        this.isCreating = false;
        this.fetchUser();
