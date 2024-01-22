@@ -13,6 +13,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   userData:any
+  id:any='';
+
   constructor(private builder: FormBuilder, private toastr: ToastrService,
     private service: ApiService, private router: Router, private http:HttpClient) { 
       sessionStorage.clear()
@@ -28,7 +30,10 @@ export class LoginComponent implements OnInit {
   login(){
     if(this.loginForm.valid){
       this.service.getById(this.loginForm.value.empid).subscribe((res)=>{
-        this.userData=res
+        this.userData=res;
+
+         this.id=this.userData.id;
+
         console.log(this.userData)
         if (this.userData.password===this.loginForm.value.password){
           
@@ -53,9 +58,7 @@ export class LoginComponent implements OnInit {
   }
 
   deleteEmployee(id:any){
-    this.http.delete<any>("https://erpp-api.onrender.com/employers" + id).subscribe(
-      res=>{console.log(res)},
-      err=>{console.log(err)}
-      )
+    console.log(id,'id of the employeee  ');
+    
   }
 }

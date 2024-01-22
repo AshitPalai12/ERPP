@@ -114,7 +114,11 @@ export class ApiService {
   getById(id:any){
     return this.http.get('https://erpp-api.onrender.com/employers'+'/'+id)
   }
-  deleteEmployee(){
-    
+
+  deleteEmployee(id:any){
+   return this.http.delete<any>("https://erpp-api.onrender.com/employers/" + id).subscribe(
+      res=>{console.log(res)},
+      err=>{console.log(err)}
+      )
   }
 }
