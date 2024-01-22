@@ -108,8 +108,11 @@ export class ApiService {
   IsAuthenticated() {
     return this.loggedIn;
   }
-  getUserRole(){
-    return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():''
+  getUserRole(): any{
+    console.log(sessionStorage.getItem('role'), '=============> from service', sessionStorage.getItem('role').toString());
+    return sessionStorage?.getItem('role')!==null ? sessionStorage?.getItem('role')?.toString() : 'jdfyrgyufgry'
+   
+    
   }
   getById(id:any){
     return this.http.get('https://erpp-api.onrender.com/employers'+'/'+id)
