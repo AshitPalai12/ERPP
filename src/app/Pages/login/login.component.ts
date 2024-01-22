@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -32,9 +32,13 @@ export class LoginComponent implements OnInit {
         console.log(this.userData)
         if (this.userData.password===this.loginForm.value.password){
           
-            sessionStorage.setItem("empid",this.userData.id)
-            sessionStorage.setItem("role",this.userData.user_type)
+            sessionStorage.setItem("empid", this.userData.id)
+            sessionStorage.setItem("role", this.userData.user_type)
+            console.log(sessionStorage)
+            // console.log(this.ss.url[0].path)
+            this.service.Login()
             this.router.navigate(['/'])
+
 
             
           

@@ -31,6 +31,14 @@
       "department": "Angular",
       "email": "sunil@test.com",
       "password": "Sunil@123"
+    },
+    {
+      "id": "5656",
+      "user_type": "Admin",
+      "fullname": "Ajay",
+      "department": "Angular",
+      "email": "aj@gmail.com",
+      "password": "Ashit@1206"
     }
   ],
   "users": [
