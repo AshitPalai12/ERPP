@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
       id: ['', Validators.required],
-      // user_type: ['', Validators.required],
+      user_type: ['', Validators.required],
       fullname: ['', Validators.required],
       department: ['', Validators.required],
       email: ['', Validators.required],
@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
   signUp() {
     this.http.post<any>("https://erpp-api.onrender.com/employers", this.signupForm.value)
       .subscribe(res => {
-        this.toastr.info("Signup Successfull")
+        this.toastr.success("Signup Successfull")
         this.signupForm.reset();
         this.router.navigate(['login']);
       }, error => {

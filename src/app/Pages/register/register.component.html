@@ -24,14 +24,14 @@
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">User Name</label>
                                 <input formControlName="fullname" type="text" class="form-control"
-                                    id="exampleInputPassword1" placeholder="Full Name" required>
+                                    id="username" placeholder="Full Name" required>
                                 <span class="text-danger"
                                     *ngIf="signupForm.controls['fullname'].dirty && signupForm.hasError('required','fullname')">*Full
                                     name is required</span>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Employee ID</label>
-                                <input formControlName="id" type="text" class="form-control" id="exampleInputPassword1"
+                                <input formControlName="id" type="text" class="form-control" id="userid"
                                     placeholder="Employee ID" required>
                                 <span class="text-danger"
                                     *ngIf="signupForm.controls['fullname'].dirty && signupForm.hasError('required','fullname')">*Full
@@ -39,20 +39,29 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Department</label>
-                                <select formControlName="department" class="form-control" id="exampleInputPassword1">
+                                <select formControlName="department" class="form-control" id="userdept">
                                     <option>IT Admin</option>
                                     <option>Management</option>
                                     <option>Angular</option>
                                 </select>
                             </div>
                             <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">User Type</label>
+                                <select formControlName="user_type" class="form-control" id="usertype">
+                                    <option>Admin</option>
+                                    <option>Manager</option>
+                                    <option>User</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email Address</label>
                                 <input type="email" formControlName="email" class="form-control"
-                                    id="exampleInputPassword1" placeholder="Email Address" required email>
+                                    id="email" placeholder="Email Address" required email>
                                 <span class="text-danger"
                                     *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required','email')">*Email
                                     Address is required</span>
                             </div>
+                            
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
                                 <input type="password" formControlName="password" class="form-control"

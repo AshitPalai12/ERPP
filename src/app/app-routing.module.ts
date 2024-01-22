@@ -28,7 +28,7 @@ const routes: Routes = [
   {path:'user', component:UserListComponent, title:'User',},
   {path:'manager', component:ManagerComponent, title:'Manager'},
   {path:'admin', component:UserListComponent, title:'Admin'},
-  {path:'manager-list', component:ManagerListComponent, title:'Manager-List',},
+  {path:'manager-list', component:ManagerListComponent, title:'Manager-List',canActivate:[AuthGuard]},
   {path: 'profile', component: ProfileComponent, title: 'Profile'},
   {path: 'manager-login', component: ManagerLoginComponent, title: 'Manager-Login'},
   {path: 'user-login', component: UserLoginComponent, title: 'User-Login'},
