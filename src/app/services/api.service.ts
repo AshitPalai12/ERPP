@@ -111,4 +111,10 @@ export class ApiService {
   getUserRole(){
     return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():''
   }
+  getById(id:any){
+    return this.http.get('https://erpp-api.onrender.com/employers'+'/'+id)
+  }
+  deleteEmployee(){
+    
+  }
 }
