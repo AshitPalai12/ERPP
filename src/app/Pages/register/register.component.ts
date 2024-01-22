@@ -35,4 +35,6 @@ export class RegisterComponent implements OnInit {
         this.toastr.error("Something went wrong");
       })
   }
+
+  
 }

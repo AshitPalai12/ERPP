@@ -21,6 +21,9 @@ export class LoginComponent implements OnInit {
   userData: any;
   filteredData: any;
   public loginForm: FormGroup
+
+  id:any='';
+  
   ngOnInit() { 
   
   this.loginForm = new FormGroup({
@@ -62,5 +65,12 @@ export class LoginComponent implements OnInit {
         })
 
       
+  }
+
+  deleteEmployee(id:any){
+    this.http.delete<any>("https://erpp-api.onrender.com/employers" + id).subscribe(
+      res=>{console.log(res)},
+      err=>{console.log(err)}
+      )
   }
 }
