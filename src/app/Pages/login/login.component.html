@@ -6,13 +6,14 @@
           <h2>Login</h2>
           <form [formGroup]="loginForm" (ngSubmit)="login()">
             <div class="form-group">
-              <label for="youremailaddress">Email address</label>
-              <input type="email" class="form-control" id="youremailaddress" formControlName="youremailaddress"
-                placeholder="Enter your email">
-              <div *ngIf="loginForm.get('youremailaddress').invalid && loginForm.get('youremailaddress').touched">
-                <small class="text-danger">Invalid email address</small>
+              <label for="empid">Employee ID</label>
+              <input type="text" class="form-control" id="youremailaddres" formControlName="empid"
+                placeholder="Enter your id">
+              <div *ngIf="loginForm.get('empid').invalid && loginForm.get('empid').touched">
+                <small class="text-danger">Invalid ID</small>
               </div>
             </div><br>
+            
             <div class="form-group">
               <label for="role">User_Type</label>
               <input type="text" class="form-control" id="role" formControlName="role"
@@ -22,10 +23,10 @@
               </div>
             </div><br>
             <div class="form-group">
-              <label for="yourpassword">Password</label>
-              <input type="password" class="form-control" id="yourpassword" formControlName="yourpassword"
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password"
                 placeholder="Enter your password">
-              <div *ngIf="loginForm.get('yourpassword').hasError('required') && loginForm.get('yourpassword').touched">
+              <div *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">
                 <small class="text-danger">Password is required</small>
               </div>
             </div><br>
