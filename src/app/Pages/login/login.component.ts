@@ -20,57 +20,47 @@ export class LoginComponent implements OnInit {
 
   userData: any;
   filteredData: any;
-  public loginForm: FormGroup;
+  public loginForm: FormGroup
+  ngOnInit() { 
+  
+  this.loginForm = new FormGroup({
+    "youremailaddress": new FormControl('', [Validators.email, Validators.required]),
+    "yourpassword": new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)]),
+    "role": new FormControl('', [ Validators.required])
+  })}
 
-  ngOnInit() {
-    // Initialize the login form with email and password controls and validators
-    this.loginForm = new FormGroup({
-      "youremailaddress": new FormControl('', [Validators.email, Validators.required]),
-      "yourpassword": new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)])
-    });
-  }
+
 
   /**
    * Attempts to log in the user by sending a request to the server with provided credentials.
    */
   login() {
     // Send an HTTP GET request to the server to fetch user data
-    this.http.get<any>('http://localhost:3000/employers')
+    this.http.get<any>('https://erpp-api.onrender.com/employers')
       .subscribe(res => {
-        // Log the response
-        console.log('res', res);
+          console.log('res', res);
+          this.userData = res;
+          const emailAdded = this.loginForm.value.youremailaddress;
+          const emailPassword = this.loginForm.value.yourpassword;
+          const role = this.loginForm.value.role;
+          this.filteredData = this.userData.find((each: any) => each.email === emailAdded);
+          console.log('dataModify', this.filteredData);
+          if (this.filteredData.password === emailPassword && this.filteredData.user_type === role) {
+            sessionStorage.setItem("role",this.userData.user_type)
+            console.log('passcheck');
+            this.service.Login()
+            this.loginForm.reset();
+            this.router.navigate(['/']);
+           
+          } else {
+            alert('Invalid Email or Password');
+          }
+        }, error => {
+          console.log(error, 'err');
 
-        // Assign the response to the userData variable
-        this.userData = res;
+          alert("Something went wrong!!");
+        })
 
-        // Extract email and password from the login form
-        const emailAdded = this.loginForm.value.youremailaddress;
-        const emailPassword = this.loginForm.value.yourpassword;
-
-        // Find a user in userData with matching email
-        this.filteredData = this.userData.find((each: any) => each.email === emailAdded);
-
-        // Check if the password matches the user's password
-        if (this.filteredData.password === emailPassword) {
-          console.log('passcheck');
-
-          // Set the Login flag to true
-          this.service.Login();
-
-          // Reset the login form
-          this.loginForm.reset();
-
-          // Navigate to the 'home' route
-          this.router.navigate(['/home']);
-
-        } else {
-          // Show an alert for invalid email or password
-          alert('Invalid Email or Password');
-        }
-      }, error => {
-        // Log any error and show an alert
-        console.log(error, 'err');
-        alert("Something went wrong!!");
-      });
+      
   }
 }

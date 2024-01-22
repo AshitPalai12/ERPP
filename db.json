@@ -21,8 +21,8 @@
       "user_type": "Admin",
       "fullnames": "Jonga",
       "department": "IT Admin",
-      "email": "jonga@test.com",
-      "password": "Jonga@123"
+      "email": "abhijeet@gmail.com",
+      "password": "Abhijeet@1206"
     },
     {
       "id": "121",
@@ -172,10 +172,25 @@
   ],
   "transactions": [
     {
-      "id": "a499",
-      "date": "2024-01-18",
+      "title": "Bus",
+      "category": "Travel",
+      "date": "2024-01-16",
+      "amount": 10000,
+      "id": "cc68"
+    },
+    {
+      "id": "22f5",
+      "title": "Dinner",
       "category": "Food",
-      "amount": 1200
+      "date": "2024-01-17",
+      "amount": 12000
+    },
+    {
+      "id": "5767",
+      "title": "Udmey",
+      "category": "Education",
+      "date": "2024-01-19",
+      "amount": 499
     }
   ]
 }
